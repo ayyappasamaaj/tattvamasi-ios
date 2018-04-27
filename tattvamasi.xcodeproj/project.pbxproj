@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815732092CCAD00B7AFDD /* HomeViewController.swift */; };
+		093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815772092CDAA00B7AFDD /* ayyappan-img2.png */; };
+		0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815782092CDAA00B7AFDD /* aysa_header.png */; };
+		0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */; };
+		0938157E2092DEFE00B7AFDD /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0938157D2092DEFE00B7AFDD /* back.png */; };
+		093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938157F2092E1C900B7AFDD /* DonateViewController.swift */; };
 		099992062090403400342686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099992052090403400342686 /* AppDelegate.swift */; };
-		099992082090403400342686 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099992072090403400342686 /* ViewController.swift */; };
 		0999920B2090403400342686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099992092090403400342686 /* Main.storyboard */; };
 		0999920D2090403400342686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999920C2090403400342686 /* Assets.xcassets */; };
-		09E0FE2420904B4D00C44BF7 /* ayyappan-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2220904B4D00C44BF7 /* ayyappan-img2.png */; };
-		09E0FE2520904B4D00C44BF7 /* aysa_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2320904B4D00C44BF7 /* aysa_header.png */; };
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		093815732092CCAD00B7AFDD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		093815772092CDAA00B7AFDD /* ayyappan-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ayyappan-img2.png"; sourceTree = "<group>"; };
+		093815782092CDAA00B7AFDD /* aysa_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aysa_header.png; sourceTree = "<group>"; };
+		0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		0938157D2092DEFE00B7AFDD /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		0938157F2092E1C900B7AFDD /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		099992022090403400342686 /* tattvamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattvamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099992052090403400342686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		099992072090403400342686 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0999920A2090403400342686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0999920C2090403400342686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		099992112090403400342686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09E0FE2220904B4D00C44BF7 /* ayyappan-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ayyappan-img2.png"; path = "tattvamasi/Resources/ayyappan-img2.png"; sourceTree = SOURCE_ROOT; };
-		09E0FE2320904B4D00C44BF7 /* aysa_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aysa_header.png; path = tattvamasi/Resources/aysa_header.png; sourceTree = SOURCE_ROOT; };
 		09E0FE2A20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09E0FE2C20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/LaunchScreen-iPad.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,12 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		093815722092CC9000B7AFDD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				093815732092CCAD00B7AFDD /* HomeViewController.swift */,
+				0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */,
+				0938157F2092E1C900B7AFDD /* DonateViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		093815762092CD9200B7AFDD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0938157D2092DEFE00B7AFDD /* back.png */,
+				093815782092CDAA00B7AFDD /* aysa_header.png */,
+				093815772092CDAA00B7AFDD /* ayyappan-img2.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		099991F92090403400342686 = {
 			isa = PBXGroup;
 			children = (
 				099992042090403400342686 /* tattvamasi */,
-				09E0FE2120904B1900C44BF7 /* Resources */,
-				099992032090403400342686 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,29 +80,23 @@
 				099992022090403400342686 /* tattvamasi.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		099992042090403400342686 /* tattvamasi */ = {
 			isa = PBXGroup;
 			children = (
+				093815762092CD9200B7AFDD /* Resources */,
+				093815722092CC9000B7AFDD /* ViewControllers */,
 				099992052090403400342686 /* AppDelegate.swift */,
-				099992072090403400342686 /* ViewController.swift */,
 				099992092090403400342686 /* Main.storyboard */,
 				09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */,
 				09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */,
 				0999920C2090403400342686 /* Assets.xcassets */,
 				099992112090403400342686 /* Info.plist */,
+				099992032090403400342686 /* Products */,
 			);
 			path = tattvamasi;
-			sourceTree = "<group>";
-		};
-		09E0FE2120904B1900C44BF7 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				09E0FE2320904B4D00C44BF7 /* aysa_header.png */,
-				09E0FE2220904B4D00C44BF7 /* ayyappan-img2.png */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,11 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */,
-				09E0FE2520904B4D00C44BF7 /* aysa_header.png in Resources */,
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
+				0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */,
+				093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */,
+				0938157E2092DEFE00B7AFDD /* back.png in Resources */,
 				0999920B2090403400342686 /* Main.storyboard in Resources */,
 				09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */,
-				09E0FE2420904B4D00C44BF7 /* ayyappan-img2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099992082090403400342686 /* ViewController.swift in Sources */,
 				099992062090403400342686 /* AppDelegate.swift in Sources */,
+				0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */,
+				093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */,
+				093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
