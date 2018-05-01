@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="About Us"/>
                                 <connections>
-                                    <segue destination="rSJ-UD-tXv" kind="show" animates="NO" id="TU5-BW-s0u"/>
+                                    <segue destination="rSJ-UD-tXv" kind="show" identifier="homeToAbout" animates="NO" id="TU5-BW-s0u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ki-co-8Uw">
@@ -47,7 +47,34 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Donate"/>
                                 <connections>
-                                    <segue destination="faA-q8-3an" kind="show" animates="NO" id="ygC-EE-UJL"/>
+                                    <segue destination="faA-q8-3an" kind="show" identifier="homeToDonate" animates="NO" id="ygC-EE-UJL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWI-af-9mI">
+                                <rect key="frame" x="65" y="132" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Bhajans"/>
+                                <connections>
+                                    <segue destination="uaJ-5D-9ao" kind="show" identifier="homeToBhajans" animates="NO" id="RUn-ib-5GB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Woy-jM-ONt">
+                                <rect key="frame" x="65" y="382" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Events"/>
+                                <connections>
+                                    <segue destination="1u1-Xm-xxQ" kind="show" identifier="homeToEvents" animates="NO" id="XCm-tH-tuc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxV-dE-s6x">
+                                <rect key="frame" x="153" y="179" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Pooja"/>
+                                <connections>
+                                    <segue destination="SaB-8o-hKu" kind="show" identifier="homeToPooja" animates="NO" id="usY-dv-mCA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513" y="-1852"/>
+            <point key="canvasLocation" x="2681" y="-1854"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="UAo-MU-w95">
@@ -83,7 +110,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="back.png"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="pw5-de-Hui"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="aboutToHome" animates="NO" id="pw5-de-Hui"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -102,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVI-FK-fuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="-1034"/>
+            <point key="canvasLocation" x="4058" y="-1034"/>
         </scene>
         <!--Donate View Controller-->
         <scene sceneID="EaB-jK-6VY">
@@ -129,7 +156,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="back.png"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="Fvv-2v-Umv"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="donateToHome" animates="NO" id="Fvv-2v-Umv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,7 +175,214 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pd-sz-BC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="-1034"/>
+            <point key="canvasLocation" x="3367" y="-1034"/>
+        </scene>
+        <!--Events View Controller-->
+        <scene sceneID="LkR-XK-PF6">
+            <objects>
+                <viewController id="1u1-Xm-xxQ" customClass="EventsViewController" customModule="tattvamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jwj-fq-e2u"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ld5-X2-4cD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZGc-wT-yX1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5zS-nK-xpM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aysa_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-EL-nVx">
+                                        <rect key="frame" x="75" y="23" width="225" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qD-sW-g5Q">
+                                        <rect key="frame" x="8" y="27" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" animates="NO" id="xZd-Jh-vyQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4549019608" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G1Z-GZ-pQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2682" y="-1034"/>
+        </scene>
+        <!--Bhajans View Controller-->
+        <scene sceneID="gFv-53-kvj">
+            <objects>
+                <viewController id="uaJ-5D-9ao" customClass="BhajansViewController" customModule="tattvamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5kz-ju-U5Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="eR2-BW-QiG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TZX-oo-e7n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HXs-2H-PkN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aysa_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="4pW-fn-PiV">
+                                        <rect key="frame" x="75" y="23" width="225" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-fk-F1p">
+                                        <rect key="frame" x="8" y="27" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="bhajansToHome" animates="NO" id="FdA-Mw-mGv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4549019608" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZU-Ue-Jmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1302" y="-1034"/>
+        </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="lrg-nd-doi">
+            <objects>
+                <viewController id="uqb-cd-mwS" customClass="EventDetailsViewController" customModule="tattvamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hGB-Y6-c6V"/>
+                        <viewControllerLayoutGuide type="bottom" id="jr6-lI-dM0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ldQ-iI-Arg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-JD-NP3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aysa_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-Zb-4Ff">
+                                        <rect key="frame" x="75" y="23" width="225" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCb-G8-LAL">
+                                        <rect key="frame" x="8" y="27" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back.png"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4549019608" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKB-xk-3KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2681" y="-360"/>
+        </scene>
+        <!--Pooja View Controller-->
+        <scene sceneID="8VY-AD-wvt">
+            <objects>
+                <viewController id="SaB-8o-hKu" customClass="PoojaViewController" customModule="tattvamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fT-mt-bbY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y5b-d4-Z61"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uK6-ak-5x8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFd-iF-twd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aysa_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="lZG-Z6-hLc">
+                                        <rect key="frame" x="75" y="23" width="225" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ak-R3-aib">
+                                        <rect key="frame" x="8" y="27" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back.png"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="poojaToHome" animates="NO" id="Dtc-IJ-tf7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4549019608" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIB-yE-l2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="-1034"/>
+        </scene>
+        <!--Ebook List View Controller-->
+        <scene sceneID="Rs4-XS-2SA">
+            <objects>
+                <viewController id="0MF-QK-M9o" customClass="EbookListViewController" customModule="tattvamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qZL-Lq-PoU"/>
+                        <viewControllerLayoutGuide type="bottom" id="SBU-LG-SMI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N8b-ab-2Gx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PAQ-80-jIl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aysa_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="0sR-X3-5Nl">
+                                        <rect key="frame" x="75" y="23" width="225" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YE3-83-9n0">
+                                        <rect key="frame" x="8" y="27" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back.png"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4549019608" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfL-4F-UoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="-360"/>
+        </scene>
+        <!--Pdf View Controller-->
+        <scene sceneID="Klf-yE-Xj4">
+            <objects>
+                <viewController id="Cl6-TA-GHQ" customClass="PdfViewController" customModule="tattvamasi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rfb-6P-aUW"/>
+                        <viewControllerLayoutGuide type="bottom" id="3fV-2k-Tzx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sZh-15-XqZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Slo-bi-NJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="320"/>
         </scene>
     </scenes>
     <resources>
@@ -156,6 +390,6 @@
         <image name="back.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pw5-de-Hui"/>
+        <segue reference="Dtc-IJ-tf7"/>
     </inferredMetricsTieBreakers>
 </document>

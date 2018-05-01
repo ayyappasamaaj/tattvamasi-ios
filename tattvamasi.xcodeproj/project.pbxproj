@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0919F41720981321004C74B1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F41620981321004C74B1 /* EventDetailsViewController.swift */; };
+		0919F428209814C7004C74B1 /* EbookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F427209814C7004C74B1 /* EbookData.swift */; };
+		0919F42A209814E3004C74B1 /* EventsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F429209814E3004C74B1 /* EventsData.swift */; };
+		0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42B20982228004C74B1 /* PoojaViewController.swift */; };
+		0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42D2098235C004C74B1 /* EbookListViewController.swift */; };
+		0919F43020982456004C74B1 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42F20982456004C74B1 /* PdfViewController.swift */; };
 		093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815732092CCAD00B7AFDD /* HomeViewController.swift */; };
 		093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815772092CDAA00B7AFDD /* ayyappan-img2.png */; };
 		0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815782092CDAA00B7AFDD /* aysa_header.png */; };
 		0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */; };
 		0938157E2092DEFE00B7AFDD /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 0938157D2092DEFE00B7AFDD /* back.png */; };
 		093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938157F2092E1C900B7AFDD /* DonateViewController.swift */; };
+		093815822093C12300B7AFDD /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815812093C12300B7AFDD /* EventsViewController.swift */; };
+		093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815832093C34E00B7AFDD /* BhajansViewController.swift */; };
 		099992062090403400342686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099992052090403400342686 /* AppDelegate.swift */; };
 		0999920B2090403400342686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099992092090403400342686 /* Main.storyboard */; };
 		0999920D2090403400342686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999920C2090403400342686 /* Assets.xcassets */; };
@@ -21,12 +29,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0919F41620981321004C74B1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		0919F427209814C7004C74B1 /* EbookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookData.swift; sourceTree = "<group>"; };
+		0919F429209814E3004C74B1 /* EventsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsData.swift; sourceTree = "<group>"; };
+		0919F42B20982228004C74B1 /* PoojaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoojaViewController.swift; sourceTree = "<group>"; };
+		0919F42D2098235C004C74B1 /* EbookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookListViewController.swift; sourceTree = "<group>"; };
+		0919F42F20982456004C74B1 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		093815732092CCAD00B7AFDD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		093815772092CDAA00B7AFDD /* ayyappan-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ayyappan-img2.png"; sourceTree = "<group>"; };
 		093815782092CDAA00B7AFDD /* aysa_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aysa_header.png; sourceTree = "<group>"; };
 		0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		0938157D2092DEFE00B7AFDD /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		0938157F2092E1C900B7AFDD /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
+		093815812093C12300B7AFDD /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		093815832093C34E00B7AFDD /* BhajansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhajansViewController.swift; sourceTree = "<group>"; };
 		099992022090403400342686 /* tattvamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattvamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099992052090403400342686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0999920A2090403400342686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,10 +63,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0919F41820981460004C74B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0919F427209814C7004C74B1 /* EbookData.swift */,
+				0919F429209814E3004C74B1 /* EventsData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		093815722092CC9000B7AFDD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				093815732092CCAD00B7AFDD /* HomeViewController.swift */,
+				093815832093C34E00B7AFDD /* BhajansViewController.swift */,
+				0919F42B20982228004C74B1 /* PoojaViewController.swift */,
+				0919F42D2098235C004C74B1 /* EbookListViewController.swift */,
+				0919F42F20982456004C74B1 /* PdfViewController.swift */,
+				093815812093C12300B7AFDD /* EventsViewController.swift */,
+				0919F41620981321004C74B1 /* EventDetailsViewController.swift */,
 				0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */,
 				0938157F2092E1C900B7AFDD /* DonateViewController.swift */,
 			);
@@ -88,6 +119,7 @@
 			children = (
 				093815762092CD9200B7AFDD /* Resources */,
 				093815722092CC9000B7AFDD /* ViewControllers */,
+				0919F41820981460004C74B1 /* Models */,
 				099992052090403400342686 /* AppDelegate.swift */,
 				099992092090403400342686 /* Main.storyboard */,
 				09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */,
@@ -176,9 +208,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				099992062090403400342686 /* AppDelegate.swift in Sources */,
+				0919F41720981321004C74B1 /* EventDetailsViewController.swift in Sources */,
 				0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */,
+				0919F42A209814E3004C74B1 /* EventsData.swift in Sources */,
 				093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */,
+				0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */,
+				0919F428209814C7004C74B1 /* EbookData.swift in Sources */,
 				093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */,
+				093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */,
+				0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */,
+				093815822093C12300B7AFDD /* EventsViewController.swift in Sources */,
+				0919F43020982456004C74B1 /* PdfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
