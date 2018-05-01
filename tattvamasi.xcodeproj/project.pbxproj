@@ -13,6 +13,7 @@
 		0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42B20982228004C74B1 /* PoojaViewController.swift */; };
 		0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42D2098235C004C74B1 /* EbookListViewController.swift */; };
 		0919F43020982456004C74B1 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42F20982456004C74B1 /* PdfViewController.swift */; };
+		0919F43220982F44004C74B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F43120982F44004C74B1 /* Constants.swift */; };
 		093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815732092CCAD00B7AFDD /* HomeViewController.swift */; };
 		093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815772092CDAA00B7AFDD /* ayyappan-img2.png */; };
 		0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815782092CDAA00B7AFDD /* aysa_header.png */; };
@@ -35,6 +36,7 @@
 		0919F42B20982228004C74B1 /* PoojaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoojaViewController.swift; sourceTree = "<group>"; };
 		0919F42D2098235C004C74B1 /* EbookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookListViewController.swift; sourceTree = "<group>"; };
 		0919F42F20982456004C74B1 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		0919F43120982F44004C74B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		093815732092CCAD00B7AFDD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		093815772092CDAA00B7AFDD /* ayyappan-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ayyappan-img2.png"; sourceTree = "<group>"; };
 		093815782092CDAA00B7AFDD /* aysa_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aysa_header.png; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				0919F427209814C7004C74B1 /* EbookData.swift */,
 				0919F429209814E3004C74B1 /* EventsData.swift */,
+				0919F43120982F44004C74B1 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */,
 				0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */,
 				0919F428209814C7004C74B1 /* EbookData.swift in Sources */,
+				0919F43220982F44004C74B1 /* Constants.swift in Sources */,
 				093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */,
 				093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */,
 				0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */,
