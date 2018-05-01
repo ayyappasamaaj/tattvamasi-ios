@@ -14,6 +14,7 @@
 		0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42D2098235C004C74B1 /* EbookListViewController.swift */; };
 		0919F43020982456004C74B1 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42F20982456004C74B1 /* PdfViewController.swift */; };
 		0919F43220982F44004C74B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F43120982F44004C74B1 /* Constants.swift */; };
+		091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 091EB4D72098D71A006A2536 /* GoogleService-Info.plist */; };
 		093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815732092CCAD00B7AFDD /* HomeViewController.swift */; };
 		093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815772092CDAA00B7AFDD /* ayyappan-img2.png */; };
 		0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815782092CDAA00B7AFDD /* aysa_header.png */; };
@@ -27,6 +28,7 @@
 		0999920D2090403400342686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999920C2090403400342686 /* Assets.xcassets */; };
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
+		9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,7 @@
 		0919F42D2098235C004C74B1 /* EbookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookListViewController.swift; sourceTree = "<group>"; };
 		0919F42F20982456004C74B1 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		0919F43120982F44004C74B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		091EB4D72098D71A006A2536 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		093815732092CCAD00B7AFDD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		093815772092CDAA00B7AFDD /* ayyappan-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ayyappan-img2.png"; sourceTree = "<group>"; };
 		093815782092CDAA00B7AFDD /* aysa_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aysa_header.png; sourceTree = "<group>"; };
@@ -52,6 +55,9 @@
 		099992112090403400342686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09E0FE2A20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09E0FE2C20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/LaunchScreen-iPad.xib"; sourceTree = "<group>"; };
+		70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.debug.xcconfig"; sourceTree = "<group>"; };
+		7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.release.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.release.xcconfig"; sourceTree = "<group>"; };
+		8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tattvamasi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				099992042090403400342686 /* tattvamasi */,
+				EF9EB35FC509F8FE635967D7 /* Pods */,
+				9883F444294167A01D7F1CBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,9 +138,27 @@
 				09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */,
 				0999920C2090403400342686 /* Assets.xcassets */,
 				099992112090403400342686 /* Info.plist */,
+				091EB4D72098D71A006A2536 /* GoogleService-Info.plist */,
 				099992032090403400342686 /* Products */,
 			);
 			path = tattvamasi;
+			sourceTree = "<group>";
+		};
+		9883F444294167A01D7F1CBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF9EB35FC509F8FE635967D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */,
+				7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 099992142090403400342686 /* Build configuration list for PBXNativeTarget "tattvamasi" */;
 			buildPhases = (
+				2A6101B068691F1738220536 /* [CP] Check Pods Manifest.lock */,
 				099991FE2090403400342686 /* Sources */,
 				099991FF2090403400342686 /* Frameworks */,
 				099992002090403400342686 /* Resources */,
+				4C0A1B3890278DBC81864D49 /* [CP] Embed Pods Frameworks */,
+				14315524DA9F876C98F8D333 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */,
+				091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */,
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
 				0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */,
 				093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */,
@@ -204,6 +235,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14315524DA9F876C98F8D333 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A6101B068691F1738220536 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4C0A1B3890278DBC81864D49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		099991FE2090403400342686 /* Sources */ = {
@@ -365,6 +444,7 @@
 		};
 		099992152090403400342686 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -382,6 +462,7 @@
 		};
 		099992162090403400342686 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
