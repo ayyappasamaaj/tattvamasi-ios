@@ -10,7 +10,9 @@ import UIKit
 
 class PdfViewController: UIViewController, UIWebViewDelegate {
     
-    var pdfUrl: String = ""
+    var ebookData: EbookData!
+    @IBOutlet weak var header: UILabel!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var pdfWebView: UIWebView!
     
     override func viewDidLoad() {
@@ -24,7 +26,14 @@ class PdfViewController: UIViewController, UIWebViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let url = URL (string: self.pdfUrl)
+        
+        // Test Data
+        self.ebookData = EbookData()
+        self.ebookData.title = "Sastha Varugirar"
+        self.ebookData.url = "https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Maha+Sastha+Varavu.pdf"
+        
+        self.header.text = self.ebookData.title
+        let url = URL (string: self.ebookData.url)
         let requestObj = URLRequest(url: url!);
         self.pdfWebView.delegate = self
         self.pdfWebView.loadRequest(requestObj)
@@ -40,19 +49,25 @@ class PdfViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(_ webView : UIWebView) {
-        //self.loadingIndicator.startAnimating()
+        self.loading.startAnimating()
     }
     
     func webViewDidFinishLoad(_ webView : UIWebView) {
-        //self.loadingIndicator.stopAnimating()
-        webView.isHidden = false
+        self.loading.stopAnimating()
+        self.pdfWebView.isHidden = false
     }
+    
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        //self.loadingIndicator.stopAnimating()
-        //self.showExceptionAlert(Constants.WEBVIEW_LOAD_ERROR_HEADER, message: Constants.WEBVIEW_LOAD_ERROR_MSG)
+        self.loading.stopAnimating()
+        let alert = UIAlertController(title: Constants.WEBVIEW_LOAD_ERROR_HEADER, message: Constants.WEBVIEW_LOAD_ERROR_MSG, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func closePdfView(_ sender: Any) {
+        self.dismiss(animated: true, completion: {});
+    }
     
 }
 

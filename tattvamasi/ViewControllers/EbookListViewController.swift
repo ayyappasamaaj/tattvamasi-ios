@@ -15,7 +15,7 @@ class EbookListViewController: UIViewController {
     var parentScreen: String = ""
     var category: String = ""
     var subCategory: String = ""
-    var selectedPdfUrl: String = "https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Maha+Sastha+Varavu.pdf"
+    var selectedEbook: EbookData!
     var ebookDictionary: Dictionary<String, Array<EbookData>> = [:]
     var sectionArray: [String] = []
     
@@ -37,13 +37,6 @@ class EbookListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "listToPdf") {
-            let targetVC = segue.destination as! PdfViewController
-            targetVC.pdfUrl = self.selectedPdfUrl
-        }
-    }
-    
     @IBAction func goBack(_ sender: Any) {
         switch self.parentScreen {
         case "Home":
@@ -62,7 +55,10 @@ class EbookListViewController: UIViewController {
     }
     
     @IBAction func launchPdf(_ sender: Any) {
-        self.performSegue(withIdentifier: "listToPdf", sender: self)
+        let webView = self.storyboard?.instantiateViewController(withIdentifier: "PdfViewController") as! PdfViewController
+        //webView.ebookData =
+        webView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(webView, animated: true, completion: nil)
     }
     
     /*

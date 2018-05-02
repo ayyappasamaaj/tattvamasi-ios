@@ -32,5 +32,6 @@ struct Constants {
     static let APP_STORE_RATING_NO      = "No, Thanks"
     
     // Error Messages
-    
+    static let WEBVIEW_LOAD_ERROR_HEADER    = "Problem loading"
+    static let WEBVIEW_LOAD_ERROR_MSG       = "There is some problem is loading this page. Please try again later."
 }
