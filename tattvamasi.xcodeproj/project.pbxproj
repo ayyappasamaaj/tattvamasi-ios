@@ -14,6 +14,7 @@
 		0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42D2098235C004C74B1 /* EbookListViewController.swift */; };
 		0919F43020982456004C74B1 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42F20982456004C74B1 /* PdfViewController.swift */; };
 		0919F43220982F44004C74B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F43120982F44004C74B1 /* Constants.swift */; };
+		091EA8E1209A586B00D9CB21 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 091EA8E0209A586B00D9CB21 /* close.png */; };
 		091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 091EB4D72098D71A006A2536 /* GoogleService-Info.plist */; };
 		093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815732092CCAD00B7AFDD /* HomeViewController.swift */; };
 		093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 093815772092CDAA00B7AFDD /* ayyappan-img2.png */; };
@@ -39,6 +40,7 @@
 		0919F42D2098235C004C74B1 /* EbookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookListViewController.swift; sourceTree = "<group>"; };
 		0919F42F20982456004C74B1 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
 		0919F43120982F44004C74B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		091EA8E0209A586B00D9CB21 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		091EB4D72098D71A006A2536 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		093815732092CCAD00B7AFDD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		093815772092CDAA00B7AFDD /* ayyappan-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ayyappan-img2.png"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				0938157D2092DEFE00B7AFDD /* back.png */,
 				093815782092CDAA00B7AFDD /* aysa_header.png */,
 				093815772092CDAA00B7AFDD /* ayyappan-img2.png */,
+				091EA8E0209A586B00D9CB21 /* close.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091EA8E1209A586B00D9CB21 /* close.png in Resources */,
 				09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */,
 				091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */,
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
