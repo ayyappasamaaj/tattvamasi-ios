@@ -20,5 +20,16 @@ class BhajansViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "bhajansToList") {
+            let targetVC = segue.destination as! EbookListViewController
+            targetVC.parentScreen = "Bhajans"
+            targetVC.category = "bhajans"
+            targetVC.subCategory = "ayyappan"
+        }
+    }
     
+    @IBAction func goToList(_ sender: Any) {
+        self.performSegue(withIdentifier: "bhajansToList", sender: self)
+    }
 }

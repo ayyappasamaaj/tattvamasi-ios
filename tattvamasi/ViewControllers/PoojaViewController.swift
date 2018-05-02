@@ -20,6 +20,17 @@ class PoojaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "poojaToList") {
+            let targetVC = segue.destination as! EbookListViewController
+            targetVC.parentScreen = "Pooja"
+            targetVC.category = "pooja"
+            targetVC.subCategory = ""
+        }
+    }
     
+    @IBAction func goToList(_ sender: Any) {
+        self.performSegue(withIdentifier: "poojaToList", sender: self)
+    }
 }
 

@@ -30,6 +30,15 @@ class HomeViewController: UIViewController {
         self.checkForRating()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "homeToList") {
+            let targetVC = segue.destination as! EbookListViewController
+            targetVC.parentScreen = "Home"
+            targetVC.category = "articles"
+            targetVC.subCategory = ""
+        }
+    }
+    
     /*
      * Code for Managing the
      * Install new update logic
