@@ -27,6 +27,11 @@
 		099992062090403400342686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099992052090403400342686 /* AppDelegate.swift */; };
 		0999920B2090403400342686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099992092090403400342686 /* Main.storyboard */; };
 		0999920D2090403400342686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999920C2090403400342686 /* Assets.xcassets */; };
+		09B9FF25209AACA30082A96E /* aysa_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B9FF22209AACA20082A96E /* aysa_banner.png */; };
+		09B9FF26209AACA30082A96E /* paypal.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B9FF23209AACA30082A96E /* paypal.png */; };
+		09B9FF27209AACA30082A96E /* donate_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09B9FF24209AACA30082A96E /* donate_banner.jpg */; };
+		09B9FF2A209AC7380082A96E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9FF29209AC7380082A96E /* UIColor.swift */; };
+		09B9FF2C209AC81C0082A96E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9FF2B209AC81C0082A96E /* String.swift */; };
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
 		9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */; };
@@ -55,6 +60,11 @@
 		0999920A2090403400342686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0999920C2090403400342686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		099992112090403400342686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09B9FF22209AACA20082A96E /* aysa_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aysa_banner.png; sourceTree = "<group>"; };
+		09B9FF23209AACA30082A96E /* paypal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal.png; sourceTree = "<group>"; };
+		09B9FF24209AACA30082A96E /* donate_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donate_banner.jpg; sourceTree = "<group>"; };
+		09B9FF29209AC7380082A96E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		09B9FF2B209AC81C0082A96E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		09E0FE2A20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09E0FE2C20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/LaunchScreen-iPad.xib"; sourceTree = "<group>"; };
 		70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +113,9 @@
 		093815762092CD9200B7AFDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09B9FF22209AACA20082A96E /* aysa_banner.png */,
+				09B9FF24209AACA30082A96E /* donate_banner.jpg */,
+				09B9FF23209AACA30082A96E /* paypal.png */,
 				0938157D2092DEFE00B7AFDD /* back.png */,
 				093815782092CDAA00B7AFDD /* aysa_header.png */,
 				093815772092CDAA00B7AFDD /* ayyappan-img2.png */,
@@ -135,6 +148,7 @@
 				093815762092CD9200B7AFDD /* Resources */,
 				093815722092CC9000B7AFDD /* ViewControllers */,
 				0919F41820981460004C74B1 /* Models */,
+				09B9FF28209AC71D0082A96E /* Extensions */,
 				099992052090403400342686 /* AppDelegate.swift */,
 				099992092090403400342686 /* Main.storyboard */,
 				09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */,
@@ -145,6 +159,15 @@
 				099992032090403400342686 /* Products */,
 			);
 			path = tattvamasi;
+			sourceTree = "<group>";
+		};
+		09B9FF28209AC71D0082A96E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09B9FF2B209AC81C0082A96E /* String.swift */,
+				09B9FF29209AC7380082A96E /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9883F444294167A01D7F1CBD /* Frameworks */ = {
@@ -231,10 +254,13 @@
 				091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */,
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
 				0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */,
+				09B9FF25209AACA30082A96E /* aysa_banner.png in Resources */,
 				093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */,
 				0938157E2092DEFE00B7AFDD /* back.png in Resources */,
+				09B9FF27209AACA30082A96E /* donate_banner.jpg in Resources */,
 				0999920B2090403400342686 /* Main.storyboard in Resources */,
 				09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */,
+				09B9FF26209AACA30082A96E /* paypal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				099992062090403400342686 /* AppDelegate.swift in Sources */,
+				09B9FF2A209AC7380082A96E /* UIColor.swift in Sources */,
 				0919F41720981321004C74B1 /* EventDetailsViewController.swift in Sources */,
 				0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */,
 				0919F42A209814E3004C74B1 /* EventsData.swift in Sources */,
@@ -304,6 +331,7 @@
 				093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */,
 				093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */,
 				0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */,
+				09B9FF2C209AC81C0082A96E /* String.swift in Sources */,
 				093815822093C12300B7AFDD /* EventsViewController.swift in Sources */,
 				0919F43020982456004C74B1 /* PdfViewController.swift in Sources */,
 			);

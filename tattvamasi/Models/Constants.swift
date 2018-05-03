@@ -16,6 +16,7 @@ struct Constants {
     // Static URLs
     static let ITUNES_URL               = "https://itunes.apple.com/us/app/tattvamasi/id1292928285?mt=8"
     static let ITUNES_URL_REVIEW        = "https://itunes.apple.com/us/app/tattvamasi/id1292928285?mt=8&action=write-review"
+    static let PAYPAL_DONATION_URL      = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4M73DVTGB3BNY"
     
     //  API Endpoints
     static let ITUNES_LOOKUP_API        = "http://itunes.apple.com/lookup?bundleId="

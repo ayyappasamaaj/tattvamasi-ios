@@ -66,7 +66,7 @@ class PdfViewController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func closePdfView(_ sender: Any) {
-        self.dismiss(animated: true, completion: {});
+        self.dismiss(animated: false, completion: nil);
     }
     
 }

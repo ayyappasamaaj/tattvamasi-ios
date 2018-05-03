@@ -28,6 +28,7 @@ class EbookListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
         print("Coming from: " + parentScreen + ", withCategory: " + category + ", and sub category: " + subCategory)
         if (!self.category.isEmpty) { self.getEbookList() }
     }
@@ -52,13 +53,6 @@ class EbookListViewController: UIViewController {
             self.performSegue(withIdentifier: "listToHome", sender: self)
             break
         }
-    }
-    
-    @IBAction func launchPdf(_ sender: Any) {
-        let webView = self.storyboard?.instantiateViewController(withIdentifier: "PdfViewController") as! PdfViewController
-        //webView.ebookData =
-        webView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        self.present(webView, animated: true, completion: nil)
     }
     
     /*
