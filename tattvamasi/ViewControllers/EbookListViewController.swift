@@ -19,10 +19,14 @@ class EbookListViewController: UIViewController {
     var ebookDictionary: Dictionary<String, Array<EbookData>> = [:]
     var sectionArray: [String] = []
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    @IBOutlet weak var ebookTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.ebookTableView.isHidden = true
         self.ref = Database.database().reference()
         print("Coming from: " + parentScreen + ", withCategory: " + category + ", and sub category: " + subCategory)
         if (!self.category.isEmpty) { self.getEbookList() }
@@ -72,6 +76,10 @@ class EbookListViewController: UIViewController {
                 let value = snapshot.value as? NSArray
                 self.categorizeAndUpdate(ebookArray: value!)
             }) { (error) in
+                DispatchQueue.main.async(execute: {
+                    self.loading.stopAnimating()
+                })
+                self.showExceptionAlert(Constants.NETWORK_ERROR_HEADER, message: Constants.NETWORK_ERROR_MSG)
                 print(error.localizedDescription)
             }
         }
@@ -91,21 +99,56 @@ class EbookListViewController: UIViewController {
         self.sectionArray = (ebookDictionary.keys).sorted()
         
         DispatchQueue.main.async(execute: {
-            /*self.loading.stopAnimating()
-            self.tableView.reloadData()
-            self.tableView.isHidden = false*/
+            self.loading.stopAnimating()
+            self.ebookTableView.reloadData()
+            self.ebookTableView.isHidden = false
         })
     }
 }
 
-public extension Sequence {
-    func categorise<U : Hashable>(_ key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
-        var dict: [U:[Iterator.Element]] = [:]
-        for el in self {
-            let key = key(el)
-            if case nil = dict[key]?.append(el) { dict[key] = [el] }
+extension EbookListViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return EbooksTableViewCell.height()
+    }
+}
+
+extension EbookListViewController : UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sectionArray.count;
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sectionArray[section].uppercased()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionName = self.sectionArray[section]
+        let dataArray = self.ebookDictionary[sectionName]
+        return (dataArray?.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let sectionName = self.sectionArray[indexPath.section]
+        let dataArray = self.ebookDictionary[sectionName]
+        
+        if let data: EbookData = dataArray?[indexPath.row] {
+            let cell = self.ebookTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewCell") as! EbooksTableViewCell
+            cell.setData(data)
+            return cell
         }
-        return dict
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.showExceptionAlert("", message: "selected")
+        //        self.logEvent(actionName:"Read More Clicked", inScreen: Constants.NEWS_SCREEN)
+        //        let detailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailNewsViewController") as! DetailNewsViewController
+        //        detailView.newsData = self.newsDataArray.object(at: indexPath.row) as! NewsData
+        //        detailView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        //        self.present(detailView, animated: true, completion: nil)
+        
     }
 }
 

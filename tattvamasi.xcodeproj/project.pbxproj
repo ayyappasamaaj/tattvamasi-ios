@@ -27,6 +27,8 @@
 		093A4402209C06FF00AB9418 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A4401209C06FF00AB9418 /* EventsTableViewCell.swift */; };
 		093A4404209C149D00AB9418 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A4403209C149D00AB9418 /* Date.swift */; };
 		093A4406209C229700AB9418 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A4405209C229700AB9418 /* UIViewController.swift */; };
+		0957DE2D209CFC6A00CAC83C /* EbooksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE2C209CFC6A00CAC83C /* EbooksTableViewCell.swift */; };
+		0957DE2F209D23F500CAC83C /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DE2E209D23F500CAC83C /* Sequence.swift */; };
 		099992062090403400342686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099992052090403400342686 /* AppDelegate.swift */; };
 		0999920B2090403400342686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099992092090403400342686 /* Main.storyboard */; };
 		0999920D2090403400342686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999920C2090403400342686 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		093A4401209C06FF00AB9418 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		093A4403209C149D00AB9418 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		093A4405209C229700AB9418 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		0957DE2C209CFC6A00CAC83C /* EbooksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbooksTableViewCell.swift; sourceTree = "<group>"; };
+		0957DE2E209D23F500CAC83C /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		099992022090403400342686 /* tattvamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattvamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099992052090403400342686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0999920A2090403400342686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				093A4401209C06FF00AB9418 /* EventsTableViewCell.swift */,
+				0957DE2C209CFC6A00CAC83C /* EbooksTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				09B9FF29209AC7380082A96E /* UIColor.swift */,
 				093A4403209C149D00AB9418 /* Date.swift */,
 				093A4405209C229700AB9418 /* UIViewController.swift */,
+				0957DE2E209D23F500CAC83C /* Sequence.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */,
 				0919F42A209814E3004C74B1 /* EventsData.swift in Sources */,
 				093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */,
+				0957DE2D209CFC6A00CAC83C /* EbooksTableViewCell.swift in Sources */,
 				093A4404209C149D00AB9418 /* Date.swift in Sources */,
 				0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */,
 				0919F428209814C7004C74B1 /* EbookData.swift in Sources */,
@@ -353,6 +360,7 @@
 				093A4402209C06FF00AB9418 /* EventsTableViewCell.swift in Sources */,
 				09B9FF2C209AC81C0082A96E /* String.swift in Sources */,
 				093815822093C12300B7AFDD /* EventsViewController.swift in Sources */,
+				0957DE2F209D23F500CAC83C /* Sequence.swift in Sources */,
 				0919F43020982456004C74B1 /* PdfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
