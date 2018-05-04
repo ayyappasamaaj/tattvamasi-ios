@@ -22,6 +22,12 @@ extension Date {
         return df.string(from: self)
     }
     
+    func dayAsString() -> String {
+        let df = DateFormatter()
+        df.setLocalizedDateFormatFromTemplate("EEEE")
+        return df.string(from: self)
+    }
+    
     func timeAsString() -> String {
         let df = DateFormatter()
         df.timeZone = TimeZone.current

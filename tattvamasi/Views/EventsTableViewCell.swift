@@ -49,11 +49,11 @@ open class EventsTableViewCell : UITableViewCell {
             self.superView.layer.borderColor = UIColor (hex: "740001").cgColor
             
             self.eventName.text = data.name
-            self.address.text = "Venue: " + data.venue
+            self.address.text = data.venue
             
             self.month.text = data.date.monthAsString().uppercased()
             self.date.text = data.date.dateAsString()
-            self.time.text = "Starts at: " + data.date.timeAsString()
+            self.time.text = data.date.dayAsString() + " at " + data.date.timeAsString()
 
         }
     }
