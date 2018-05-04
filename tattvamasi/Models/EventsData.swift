@@ -11,9 +11,10 @@ import Foundation
 class EventsData: NSObject {
     var name: String = ""
     var desc: String = ""
-    var date: String = ""
-    var venue: String = ""
-    var latitude: String = ""
-    var longitude: String = ""
     var registrationLink: String = ""
+    var venue: String = ""
+    var dateString: String = ""
+    var date: Date!
+    var latitude: Double!
+    var longitude: Double!
 }

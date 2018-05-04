@@ -23,14 +23,13 @@ class EbookListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         self.ref = Database.database().reference()
+        print("Coming from: " + parentScreen + ", withCategory: " + category + ", and sub category: " + subCategory)
+        if (!self.category.isEmpty) { self.getEbookList() }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
-        print("Coming from: " + parentScreen + ", withCategory: " + category + ", and sub category: " + subCategory)
-        if (!self.category.isEmpty) { self.getEbookList() }
     }
     
     override func didReceiveMemoryWarning() {

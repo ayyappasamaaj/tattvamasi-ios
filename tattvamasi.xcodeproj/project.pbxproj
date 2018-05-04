@@ -24,6 +24,9 @@
 		093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0938157F2092E1C900B7AFDD /* DonateViewController.swift */; };
 		093815822093C12300B7AFDD /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815812093C12300B7AFDD /* EventsViewController.swift */; };
 		093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093815832093C34E00B7AFDD /* BhajansViewController.swift */; };
+		093A4402209C06FF00AB9418 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A4401209C06FF00AB9418 /* EventsTableViewCell.swift */; };
+		093A4404209C149D00AB9418 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A4403209C149D00AB9418 /* Date.swift */; };
+		093A4406209C229700AB9418 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093A4405209C229700AB9418 /* UIViewController.swift */; };
 		099992062090403400342686 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099992052090403400342686 /* AppDelegate.swift */; };
 		0999920B2090403400342686 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099992092090403400342686 /* Main.storyboard */; };
 		0999920D2090403400342686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0999920C2090403400342686 /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		0938157F2092E1C900B7AFDD /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		093815812093C12300B7AFDD /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		093815832093C34E00B7AFDD /* BhajansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhajansViewController.swift; sourceTree = "<group>"; };
+		093A4401209C06FF00AB9418 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		093A4403209C149D00AB9418 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		093A4405209C229700AB9418 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		099992022090403400342686 /* tattvamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tattvamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099992052090403400342686 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0999920A2090403400342686 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +130,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		093A4400209C06DF00AB9418 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				093A4401209C06FF00AB9418 /* EventsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		099991F92090403400342686 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +162,7 @@
 				093815762092CD9200B7AFDD /* Resources */,
 				093815722092CC9000B7AFDD /* ViewControllers */,
 				0919F41820981460004C74B1 /* Models */,
+				093A4400209C06DF00AB9418 /* Views */,
 				09B9FF28209AC71D0082A96E /* Extensions */,
 				099992052090403400342686 /* AppDelegate.swift */,
 				099992092090403400342686 /* Main.storyboard */,
@@ -166,6 +181,8 @@
 			children = (
 				09B9FF2B209AC81C0082A96E /* String.swift */,
 				09B9FF29209AC7380082A96E /* UIColor.swift */,
+				093A4403209C149D00AB9418 /* Date.swift */,
+				093A4405209C229700AB9418 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,16 +338,19 @@
 			files = (
 				099992062090403400342686 /* AppDelegate.swift in Sources */,
 				09B9FF2A209AC7380082A96E /* UIColor.swift in Sources */,
+				093A4406209C229700AB9418 /* UIViewController.swift in Sources */,
 				0919F41720981321004C74B1 /* EventDetailsViewController.swift in Sources */,
 				0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */,
 				0919F42A209814E3004C74B1 /* EventsData.swift in Sources */,
 				093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */,
+				093A4404209C149D00AB9418 /* Date.swift in Sources */,
 				0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */,
 				0919F428209814C7004C74B1 /* EbookData.swift in Sources */,
 				0919F43220982F44004C74B1 /* Constants.swift in Sources */,
 				093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */,
 				093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */,
 				0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */,
+				093A4402209C06FF00AB9418 /* EventsTableViewCell.swift in Sources */,
 				09B9FF2C209AC81C0082A96E /* String.swift in Sources */,
 				093815822093C12300B7AFDD /* EventsViewController.swift in Sources */,
 				0919F43020982456004C74B1 /* PdfViewController.swift in Sources */,
