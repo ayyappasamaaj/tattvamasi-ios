@@ -12,7 +12,6 @@ open class EventsTableViewCell : UITableViewCell {
     
     @IBOutlet var superView: UIView!
     @IBOutlet var eventName: UILabel!
-    @IBOutlet var month: UILabel!
     @IBOutlet var date: UILabel!
     @IBOutlet var address: UILabel!
     @IBOutlet var time: UILabel!
@@ -51,8 +50,7 @@ open class EventsTableViewCell : UITableViewCell {
             self.eventName.text = data.name
             self.address.text = data.venue
             
-            self.month.text = data.date.monthAsString().uppercased()
-            self.date.text = data.date.dateAsString()
+            self.date.text = data.date.dateAsString() + "\n" + data.date.monthAsString().uppercased()
             self.time.text = data.date.dayAsString() + " at " + data.date.timeAsString()
 
         }
