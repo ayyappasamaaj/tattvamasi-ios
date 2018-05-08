@@ -100,12 +100,12 @@ extension EventsViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.showExceptionAlert("", message: "selected")
-//        self.logEvent(actionName:"Read More Clicked", inScreen: Constants.NEWS_SCREEN)
-//        let detailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailNewsViewController") as! DetailNewsViewController
-//        detailView.newsData = self.newsDataArray.object(at: indexPath.row) as! NewsData
-//        detailView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-//        self.present(detailView, animated: true, completion: nil)
         
+        if let data: EventsData = self.eventsArray.object(at: indexPath.row) as? EventsData {
+            let eventDetailsView = self.storyboard?.instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
+            eventDetailsView.eventData = data
+            eventDetailsView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            self.present(eventDetailsView, animated: true, completion: nil)
+        }
     }
 }

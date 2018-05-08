@@ -142,13 +142,16 @@ extension EbookListViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.showExceptionAlert("", message: "selected")
-        //        self.logEvent(actionName:"Read More Clicked", inScreen: Constants.NEWS_SCREEN)
-        //        let detailView = self.storyboard?.instantiateViewController(withIdentifier: "DetailNewsViewController") as! DetailNewsViewController
-        //        detailView.newsData = self.newsDataArray.object(at: indexPath.row) as! NewsData
-        //        detailView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        //        self.present(detailView, animated: true, completion: nil)
         
+        let sectionName = self.sectionArray[indexPath.section]
+        let dataArray = self.ebookDictionary[sectionName]
+        
+        if let data: EbookData = dataArray?[indexPath.row] {
+            let pdfView = self.storyboard?.instantiateViewController(withIdentifier: "PdfViewController") as! PdfViewController
+            pdfView.ebookData = data
+            pdfView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+            self.present(pdfView, animated: true, completion: nil)
+        }
     }
 }
 

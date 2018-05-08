@@ -26,12 +26,6 @@ class PdfViewController: UIViewController, UIWebViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        // Test Data
-        self.ebookData = EbookData()
-        self.ebookData.title = "Sastha Varugirar"
-        self.ebookData.url = "https://s3-us-west-2.amazonaws.com/ayyappasamaajdrive/Bhajans/Ayyappan/Maha+Sastha+Varavu.pdf"
-        
         self.header.text = self.ebookData.title
         let url = URL (string: self.ebookData.url)
         let requestObj = URLRequest(url: url!);

@@ -10,6 +10,8 @@ import UIKit
 
 class EventDetailsViewController: UIViewController {
     
+    var eventData: EventsData!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,13 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print(self.eventData.desc)
+    }
+    
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil);
+    }
     
 }
 

@@ -453,6 +453,9 @@ CA 94583</string>
                                         <rect key="frame" x="8" y="27" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="back.png"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="uqb-cd-mwS" eventType="touchUpInside" id="Ckb-Rx-7n1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4549019608" green="0.0" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -685,9 +688,9 @@ CA 94583</string>
         <image name="paypal.png" width="600" height="177"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9F8-bR-s3X"/>
+        <segue reference="0UU-3G-VNq"/>
         <segue reference="sgK-th-1qd"/>
         <segue reference="6RW-P2-Rkt"/>
-        <segue reference="sQT-Fq-B9U"/>
+        <segue reference="FdA-Mw-mGv"/>
     </inferredMetricsTieBreakers>
 </document>
