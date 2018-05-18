@@ -7,29 +7,60 @@
 //
 
 import UIKit
+import MapKit
 import FirebaseDatabase
 
 class EventsViewController: UIViewController {
     
     var ref: DatabaseReference!
-    var eventsArray: NSMutableArray!
+    var eventsArray: [EventsData] = []
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
+    var gMapAvailable: Bool = false
+    var selectedEvent: EventsData!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.eventsArray = NSMutableArray()
         self.eventsTableView.isHidden = true
         self.ref = Database.database().reference()
         self.getEbookList()
+        self.gMapAvailable = UIApplication.shared.canOpenURL(URL(string: Constants.GOOGLE_MAPS_SCHEME)!)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func setReminder(_ sender: Any) {
+        self.selectedEvent = self.eventsArray[(sender as AnyObject).tag]
+    }
+    
+    @IBAction func getDirections(_ sender: Any) {
+        self.selectedEvent = self.eventsArray[(sender as AnyObject).tag]
+        
+        if (self.gMapAvailable) {
+            let alert = UIAlertController(title: "", message: "Select any app", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            self.launchAppleMaps()
+        }
+        
+    }
+    
+    func launchGoogleMaps()  {
+        
+    }
+    
+    func launchAppleMaps()  {
+        let coordinate = CLLocationCoordinate2DMake(self.selectedEvent.latitude, self.selectedEvent.longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = self.selectedEvent.venue
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
     
     /*
@@ -38,7 +69,6 @@ class EventsViewController: UIViewController {
      *
      */
     func getEbookList() {
-        var eventsData: [EventsData] = []
         self.ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
             let events = snapshot.value as? NSArray
             for record in events! {
@@ -55,11 +85,11 @@ class EventsViewController: UIViewController {
                 event.dateString = event.date.dateAsDescription()
                 
                 if  (event.date > Date()) {
-                    eventsData.append(event)
+                    self.eventsArray.append(event)
                 }
             }
         
-            self.eventsArray = NSMutableArray(array: eventsData.sorted(by: {$0.date.compare($1.date) == .orderedAscending }))
+            self.eventsArray = self.eventsArray.sorted(by: {$0.date.compare($1.date) == .orderedAscending })
             
             DispatchQueue.main.async(execute: {
                 self.loading.stopAnimating()
@@ -79,7 +109,8 @@ class EventsViewController: UIViewController {
 
 extension EventsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return EventsTableViewCell.height()
+        let data: EventsData = self.eventsArray[indexPath.row]
+        return EventsTableViewCell.height(showDetails: data.showDetails)
     }
 }
 
@@ -90,22 +121,26 @@ extension EventsViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let data: EventsData = self.eventsArray.object(at: indexPath.row) as? EventsData {
-            let cell = self.eventsTableView.dequeueReusableCell(withIdentifier: "EventsTableViewCell") as! EventsTableViewCell
-            cell.setData(data)
-            return cell
-        }
-        return UITableViewCell()
+        let data: EventsData = self.eventsArray[indexPath.row]
+        let cell = self.eventsTableView.dequeueReusableCell(withIdentifier: "EventsTableViewCell") as! EventsTableViewCell
+        cell.setData(data)
+        cell.directionsButton.tag = indexPath.row
+        cell.reminderButton.tag = indexPath.row
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let data: EventsData = self.eventsArray.object(at: indexPath.row) as? EventsData {
-            let eventDetailsView = self.storyboard?.instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
-            eventDetailsView.eventData = data
-            eventDetailsView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            self.present(eventDetailsView, animated: true, completion: nil)
+        var i = 0;
+        for event: EventsData in self.eventsArray {
+            if (i == indexPath.row) {
+                event.showDetails = !event.showDetails
+            } else {
+                event.showDetails = false
+            }
+            i += 1;
         }
+        
+        self.eventsTableView.reloadData()
     }
 }

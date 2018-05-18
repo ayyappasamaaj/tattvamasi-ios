@@ -16,6 +16,12 @@ open class EventsTableViewCell : UITableViewCell {
     @IBOutlet var address: UILabel!
     @IBOutlet var time: UILabel!
     
+    // Views for expansion
+    @IBOutlet var descLabel: UILabel!
+    @IBOutlet var buttonsView: UIView!
+    @IBOutlet var reminderButton: UIButton!
+    @IBOutlet var directionsButton: UIButton!
+    
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,8 +39,12 @@ open class EventsTableViewCell : UITableViewCell {
     open func setup() {
     }
     
-    open class func height() -> CGFloat {
-        return 120
+    open class func height(showDetails: Bool) -> CGFloat {
+        if (showDetails) {
+            return 230
+        } else {
+            return 120
+        }
         
     }
     
@@ -52,6 +62,9 @@ open class EventsTableViewCell : UITableViewCell {
             
             self.date.text = data.date.dateAsString() + "\n" + data.date.monthAsString().uppercased()
             self.time.text = data.date.dayAsString() + " at " + data.date.timeAsString()
+            
+            // Views for expansion
+            self.descLabel.text = data.desc
 
         }
     }

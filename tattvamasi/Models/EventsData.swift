@@ -17,4 +17,5 @@ class EventsData: NSObject {
     var date: Date!
     var latitude: Double!
     var longitude: Double!
+    var showDetails: Bool = false
 }

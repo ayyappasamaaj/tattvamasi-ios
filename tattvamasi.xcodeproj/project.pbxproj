@@ -38,6 +38,10 @@
 		09B9FF27209AACA30082A96E /* donate_banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 09B9FF24209AACA30082A96E /* donate_banner.jpg */; };
 		09B9FF2A209AC7380082A96E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9FF29209AC7380082A96E /* UIColor.swift */; };
 		09B9FF2C209AC81C0082A96E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9FF2B209AC81C0082A96E /* String.swift */; };
+		09CFEA9920AF567F00DCA075 /* up-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CFEA9720AF567E00DCA075 /* up-arrow.png */; };
+		09CFEA9A20AF567F00DCA075 /* down-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CFEA9820AF567E00DCA075 /* down-arrow.png */; };
+		09CFEA9C20AF6C6800DCA075 /* route.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CFEA9B20AF6C6800DCA075 /* route.png */; };
+		09CFEA9E20AF6D4300DCA075 /* reminder.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CFEA9D20AF6D4200DCA075 /* reminder.png */; };
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
 		9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */; };
@@ -77,6 +81,10 @@
 		09B9FF24209AACA30082A96E /* donate_banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donate_banner.jpg; sourceTree = "<group>"; };
 		09B9FF29209AC7380082A96E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		09B9FF2B209AC81C0082A96E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		09CFEA9720AF567E00DCA075 /* up-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-arrow.png"; sourceTree = "<group>"; };
+		09CFEA9820AF567E00DCA075 /* down-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-arrow.png"; sourceTree = "<group>"; };
+		09CFEA9B20AF6C6800DCA075 /* route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route.png; sourceTree = "<group>"; };
+		09CFEA9D20AF6D4200DCA075 /* reminder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminder.png; sourceTree = "<group>"; };
 		09E0FE2A20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09E0FE2C20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/LaunchScreen-iPad.xib"; sourceTree = "<group>"; };
 		70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +138,10 @@
 				09B9FF23209AACA30082A96E /* paypal.png */,
 				0938157D2092DEFE00B7AFDD /* back.png */,
 				093815782092CDAA00B7AFDD /* aysa_header.png */,
+				09CFEA9820AF567E00DCA075 /* down-arrow.png */,
+				09CFEA9720AF567E00DCA075 /* up-arrow.png */,
+				09CFEA9B20AF6C6800DCA075 /* route.png */,
+				09CFEA9D20AF6D4200DCA075 /* reminder.png */,
 				093815772092CDAA00B7AFDD /* ayyappan-img2.png */,
 				091EA8E0209A586B00D9CB21 /* close.png */,
 			);
@@ -275,10 +287,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CFEA9C20AF6C6800DCA075 /* route.png in Resources */,
 				091EA8E1209A586B00D9CB21 /* close.png in Resources */,
 				09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */,
 				091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */,
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
+				09CFEA9E20AF6D4300DCA075 /* reminder.png in Resources */,
+				09CFEA9920AF567F00DCA075 /* up-arrow.png in Resources */,
 				0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */,
 				09B9FF25209AACA30082A96E /* aysa_banner.png in Resources */,
 				093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */,
@@ -287,6 +302,7 @@
 				0999920B2090403400342686 /* Main.storyboard in Resources */,
 				09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */,
 				09B9FF26209AACA30082A96E /* paypal.png in Resources */,
+				09CFEA9A20AF567F00DCA075 /* down-arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

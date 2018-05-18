@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class EventDetailsViewController: UIViewController {
     
@@ -28,6 +29,13 @@ class EventDetailsViewController: UIViewController {
     
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil);
+    }
+    
+    @IBAction func getDirections(_ sender: Any) {
+        let coordinate = CLLocationCoordinate2DMake(eventData.latitude, eventData.longitude)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+        mapItem.name = eventData.venue
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
     }
     
 }
