@@ -32,6 +32,11 @@ struct Constants {
     static let APP_STORE_RATING_YES         = "Yes, Rate Now"
     static let APP_STORE_RATING_LATER       = "Remind Later"
     static let APP_STORE_RATING_NO          = "No, Thanks"
+    static let EVENT_ADDED                  = "Event Added"
+    static let CALENDAR_GRANT_ACCESS_HDR    = "Allow Calendar Access"
+    static let CALENDAR_GRANT_ACCESS        = "Please allow Tattvamasi to access your calendar and try again. You can grant access in Settings -> Tattvamasi"
+    static let ADD_EVENT_ERROR_HDR          = "Problem adding event"
+    static let ADD_EVENT_ERROR              = "Error occurred while adding the event to your calendar. Please try again."
     
     // Error Messages
     static let WEBVIEW_LOAD_ERROR_HEADER    = "Problem loading"

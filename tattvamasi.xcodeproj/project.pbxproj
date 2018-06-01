@@ -44,6 +44,21 @@
 		09CFEA9E20AF6D4300DCA075 /* reminder.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CFEA9D20AF6D4200DCA075 /* reminder.png */; };
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
+		09FB824320C0FEC800DE19A9 /* ayyappa.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB823A20C0FEC700DE19A9 /* ayyappa.png */; };
+		09FB824420C0FEC800DE19A9 /* rama.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB823B20C0FEC700DE19A9 /* rama.png */; };
+		09FB824520C0FEC800DE19A9 /* shiva.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB823C20C0FEC700DE19A9 /* shiva.png */; };
+		09FB824620C0FEC800DE19A9 /* guru.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB823D20C0FEC700DE19A9 /* guru.png */; };
+		09FB824720C0FEC800DE19A9 /* murugan.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB823E20C0FEC700DE19A9 /* murugan.png */; };
+		09FB824820C0FEC800DE19A9 /* ganesh.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB823F20C0FEC800DE19A9 /* ganesh.png */; };
+		09FB824920C0FEC800DE19A9 /* hanuman.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824020C0FEC800DE19A9 /* hanuman.png */; };
+		09FB824A20C0FEC800DE19A9 /* vishu.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824120C0FEC800DE19A9 /* vishu.png */; };
+		09FB824B20C0FEC800DE19A9 /* devi.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824220C0FEC800DE19A9 /* devi.png */; };
+		09FB825220C1062600DE19A9 /* pooja.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824C20C1062200DE19A9 /* pooja.png */; };
+		09FB825320C1062600DE19A9 /* articles.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824D20C1062300DE19A9 /* articles.png */; };
+		09FB825420C1062600DE19A9 /* bhajan.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824E20C1062300DE19A9 /* bhajan.png */; };
+		09FB825520C1062600DE19A9 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB824F20C1062400DE19A9 /* donate.png */; };
+		09FB825620C1062600DE19A9 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB825020C1062500DE19A9 /* about.png */; };
+		09FB825720C1062600DE19A9 /* events.png in Resources */ = {isa = PBXBuildFile; fileRef = 09FB825120C1062500DE19A9 /* events.png */; };
 		9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +102,21 @@
 		09CFEA9D20AF6D4200DCA075 /* reminder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminder.png; sourceTree = "<group>"; };
 		09E0FE2A20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09E0FE2C20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/LaunchScreen-iPad.xib"; sourceTree = "<group>"; };
+		09FB823A20C0FEC700DE19A9 /* ayyappa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ayyappa.png; sourceTree = "<group>"; };
+		09FB823B20C0FEC700DE19A9 /* rama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rama.png; sourceTree = "<group>"; };
+		09FB823C20C0FEC700DE19A9 /* shiva.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shiva.png; sourceTree = "<group>"; };
+		09FB823D20C0FEC700DE19A9 /* guru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guru.png; sourceTree = "<group>"; };
+		09FB823E20C0FEC700DE19A9 /* murugan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = murugan.png; sourceTree = "<group>"; };
+		09FB823F20C0FEC800DE19A9 /* ganesh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ganesh.png; sourceTree = "<group>"; };
+		09FB824020C0FEC800DE19A9 /* hanuman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hanuman.png; sourceTree = "<group>"; };
+		09FB824120C0FEC800DE19A9 /* vishu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vishu.png; sourceTree = "<group>"; };
+		09FB824220C0FEC800DE19A9 /* devi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = devi.png; sourceTree = "<group>"; };
+		09FB824C20C1062200DE19A9 /* pooja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pooja.png; sourceTree = "<group>"; };
+		09FB824D20C1062300DE19A9 /* articles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = articles.png; sourceTree = "<group>"; };
+		09FB824E20C1062300DE19A9 /* bhajan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bhajan.png; sourceTree = "<group>"; };
+		09FB824F20C1062400DE19A9 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donate.png; sourceTree = "<group>"; };
+		09FB825020C1062500DE19A9 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		09FB825120C1062500DE19A9 /* events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = events.png; sourceTree = "<group>"; };
 		70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.release.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.release.xcconfig"; sourceTree = "<group>"; };
 		8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tattvamasi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +163,7 @@
 		093815762092CD9200B7AFDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				09FB823920C0FEB100DE19A9 /* Deities */,
 				09B9FF22209AACA20082A96E /* aysa_banner.png */,
 				09B9FF24209AACA30082A96E /* donate_banner.jpg */,
 				09B9FF23209AACA30082A96E /* paypal.png */,
@@ -144,6 +175,12 @@
 				09CFEA9D20AF6D4200DCA075 /* reminder.png */,
 				093815772092CDAA00B7AFDD /* ayyappan-img2.png */,
 				091EA8E0209A586B00D9CB21 /* close.png */,
+				09FB825020C1062500DE19A9 /* about.png */,
+				09FB824D20C1062300DE19A9 /* articles.png */,
+				09FB824E20C1062300DE19A9 /* bhajan.png */,
+				09FB824F20C1062400DE19A9 /* donate.png */,
+				09FB825120C1062500DE19A9 /* events.png */,
+				09FB824C20C1062200DE19A9 /* pooja.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -206,6 +243,22 @@
 				0957DE2E209D23F500CAC83C /* Sequence.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		09FB823920C0FEB100DE19A9 /* Deities */ = {
+			isa = PBXGroup;
+			children = (
+				09FB823A20C0FEC700DE19A9 /* ayyappa.png */,
+				09FB824220C0FEC800DE19A9 /* devi.png */,
+				09FB823F20C0FEC800DE19A9 /* ganesh.png */,
+				09FB823D20C0FEC700DE19A9 /* guru.png */,
+				09FB824020C0FEC800DE19A9 /* hanuman.png */,
+				09FB823E20C0FEC700DE19A9 /* murugan.png */,
+				09FB823B20C0FEC700DE19A9 /* rama.png */,
+				09FB823C20C0FEC700DE19A9 /* shiva.png */,
+				09FB824120C0FEC800DE19A9 /* vishu.png */,
+			);
+			path = Deities;
 			sourceTree = "<group>";
 		};
 		9883F444294167A01D7F1CBD /* Frameworks */ = {
@@ -288,20 +341,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				09CFEA9C20AF6C6800DCA075 /* route.png in Resources */,
+				09FB825220C1062600DE19A9 /* pooja.png in Resources */,
 				091EA8E1209A586B00D9CB21 /* close.png in Resources */,
+				09FB824420C0FEC800DE19A9 /* rama.png in Resources */,
+				09FB824820C0FEC800DE19A9 /* ganesh.png in Resources */,
+				09FB825620C1062600DE19A9 /* about.png in Resources */,
 				09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */,
 				091EB4D82098D71A006A2536 /* GoogleService-Info.plist in Resources */,
+				09FB825520C1062600DE19A9 /* donate.png in Resources */,
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
+				09FB824620C0FEC800DE19A9 /* guru.png in Resources */,
+				09FB824520C0FEC800DE19A9 /* shiva.png in Resources */,
 				09CFEA9E20AF6D4300DCA075 /* reminder.png in Resources */,
+				09FB824720C0FEC800DE19A9 /* murugan.png in Resources */,
 				09CFEA9920AF567F00DCA075 /* up-arrow.png in Resources */,
 				0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */,
 				09B9FF25209AACA30082A96E /* aysa_banner.png in Resources */,
 				093815792092CDAA00B7AFDD /* ayyappan-img2.png in Resources */,
 				0938157E2092DEFE00B7AFDD /* back.png in Resources */,
+				09FB825420C1062600DE19A9 /* bhajan.png in Resources */,
+				09FB824B20C0FEC800DE19A9 /* devi.png in Resources */,
 				09B9FF27209AACA30082A96E /* donate_banner.jpg in Resources */,
+				09FB824920C0FEC800DE19A9 /* hanuman.png in Resources */,
+				09FB825320C1062600DE19A9 /* articles.png in Resources */,
 				0999920B2090403400342686 /* Main.storyboard in Resources */,
+				09FB824A20C0FEC800DE19A9 /* vishu.png in Resources */,
 				09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */,
+				09FB824320C0FEC800DE19A9 /* ayyappa.png in Resources */,
 				09B9FF26209AACA30082A96E /* paypal.png in Resources */,
+				09FB825720C1062600DE19A9 /* events.png in Resources */,
 				09CFEA9A20AF567F00DCA075 /* down-arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import FirebaseDatabase
+import EventKit
 
 class EventsViewController: UIViewController {
     
@@ -35,25 +36,65 @@ class EventsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+     * Methods for handling
+     * Set Reminder
+     *
+     */
     @IBAction func setReminder(_ sender: Any) {
         self.selectedEvent = self.eventsArray[(sender as AnyObject).tag]
+        self.addEventToCalendar()
     }
     
+    func addEventToCalendar() {
+        let eventStore = EKEventStore()
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = self.selectedEvent.name
+                event.startDate = self.selectedEvent.date
+                event.endDate = self.selectedEvent.endDate
+                event.notes = self.selectedEvent.desc
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                    self.showExceptionAlert(Constants.EVENT_ADDED, message: self.selectedEvent.name + " added to calendar on " + self.selectedEvent.dateString)
+                } catch let e as NSError {
+                    print(e.localizedDescription)
+                    self.showExceptionAlert(Constants.ADD_EVENT_ERROR_HDR, message: Constants.ADD_EVENT_ERROR)
+                    return
+                }
+            } else {
+                self.showExceptionAlert(Constants.CALENDAR_GRANT_ACCESS_HDR, message: Constants.CALENDAR_GRANT_ACCESS)
+            }
+        })
+    }
+    
+    
+    /*
+     * Methods for handling
+     * Get Directions
+     *
+     */
     @IBAction func getDirections(_ sender: Any) {
         self.selectedEvent = self.eventsArray[(sender as AnyObject).tag]
-        
         if (self.gMapAvailable) {
-            let alert = UIAlertController(title: "", message: "Select any app", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "", message: "Select your preferred navigation", preferredStyle: UIAlertControllerStyle.actionSheet)
+            alert.addAction(UIAlertAction(title: "Maps",
+                                          style: UIAlertActionStyle.default,
+                                          handler: {(alert: UIAlertAction!) in self.launchAppleMaps()}))
+            alert.addAction(UIAlertAction(title: "Google Maps",
+                                          style: UIAlertActionStyle.default,
+                                          handler: {(alert: UIAlertAction!) in self.launchGoogleMaps()}))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             self.launchAppleMaps()
         }
-        
     }
     
     func launchGoogleMaps()  {
-        
+        UIApplication.shared.openURL(URL(string: "comgooglemaps://?saddr=&daddr=\(self.selectedEvent.latitude),\(self.selectedEvent.longitude)&directionsmode=driving")!)
     }
     
     func launchAppleMaps()  {
@@ -79,6 +120,9 @@ class EventsViewController: UIViewController {
                 event.longitude =  (record as! [String : AnyObject])["longitude"] as! Double
                 event.registrationLink =  (record as! [String : AnyObject])["registrationLink"] as! String
                 event.venue =  (record as! [String : AnyObject])["venue"] as! String
+                
+                let endSecs = (record as! [String : AnyObject])["endDate"] as! Double
+                event.endDate = Date(timeIntervalSince1970: endSecs)
                 
                 let millisecs = (record as! [String : AnyObject])["date"] as! Double
                 event.date = Date(timeIntervalSince1970: millisecs)

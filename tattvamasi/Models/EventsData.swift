@@ -15,6 +15,7 @@ class EventsData: NSObject {
     var venue: String = ""
     var dateString: String = ""
     var date: Date!
+    var endDate: Date!
     var latitude: Double!
     var longitude: Double!
     var showDetails: Bool = false
