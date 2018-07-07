@@ -10,11 +10,18 @@ import UIKit
 
 class BhajansViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    var collectionViewLayout: BhajansViewLayout!
     var selectedSubCategory: String = ""
+    var collectionViewData: [String] = ["ganesha", "guru", "muruga", "devi", "shiva", "vishnu", "rama", "hanuman", "ayyappan"]
+    var collectionImages: [String] = ["ganesh.png", "guru.png", "murugan.png", "devi.png", "shivan.png", "vishnu.png", "ram.png", "hanuman.png", "ayyappan.png"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        collectionViewLayout = BhajansViewLayout()
+        collectionView.collectionViewLayout = collectionViewLayout
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,40 +37,22 @@ class BhajansViewController: UIViewController {
             targetVC.subCategory = self.selectedSubCategory
         }
     }
+}
+
+extension BhajansViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.collectionViewData.count
+    }
     
-    @IBAction func goToList(_ sender: Any) {
-        switch (sender as AnyObject).tag {
-        case 1:
-            self.selectedSubCategory = "ganesha"
-            break
-        case 2:
-            self.selectedSubCategory = "guru"
-            break
-        case 3:
-            self.selectedSubCategory = "muruga"
-            break
-        case 4:
-            self.selectedSubCategory = "devi"
-            break
-        case 5:
-            self.selectedSubCategory = "shiva"
-            break
-        case 6:
-            self.selectedSubCategory = "vishnu"
-            break
-        case 7:
-            self.selectedSubCategory = "rama"
-            break
-        case 8:
-            self.selectedSubCategory = "hanuman"
-            break
-        case 9:
-            self.selectedSubCategory = "ayyappan"
-            break
-        default:
-            self.selectedSubCategory = ""
-            break
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: BhajansCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BhajansCollectionViewCell", for: indexPath) as! BhajansCollectionViewCell
+        cell.title.text = self.collectionViewData[indexPath.row].capitalized
+        cell.imageView.image = UIImage(named: self.collectionImages[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedSubCategory = self.collectionViewData[indexPath.row]
         self.performSegue(withIdentifier: "bhajansToList", sender: self)
     }
 }

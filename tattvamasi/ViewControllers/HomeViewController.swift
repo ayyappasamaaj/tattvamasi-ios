@@ -12,12 +12,18 @@ import StoreKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    var collectionViewLayout: HomeViewLayout!
     let defaults = UserDefaults.standard
+    var collectionViewData: [String] = ["Bhajans", "Pooja", "Articles", "Events", "Donate", "About us"]
+    var collectionImages: [String] = ["bhajan.png", "pooja.png", "article.png", "calendar.png", "donate.png", "ayyappan.png"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        collectionViewLayout = HomeViewLayout()
+        collectionView.collectionViewLayout = collectionViewLayout
         self.checkForAppUpdates()
     }
 
@@ -135,6 +141,56 @@ class HomeViewController: UIViewController {
         defaults.set(0, forKey: "rateCounter")
     }
 
+    /*
+     * Code for Managing the
+     * Navigation from Collection View
+     */
+    func navigate(withIndex: Int) {
+     
+        var identifierString = ""
+        
+        switch withIndex {
+        case 0:
+            identifierString = "homeToBhajans"
+            break;
+        case 1:
+            identifierString = "homeToPooja"
+            break;
+        case 2:
+            identifierString = "homeToList"
+            break;
+        case 3:
+            identifierString = "homeToEvents"
+            break;
+        case 4:
+            identifierString = "homeToDonate"
+            break;
+        case 5:
+            identifierString = "homeToAbout"
+            break;
+        default:
+            break;
+        }
+        self.performSegue(withIdentifier: identifierString, sender: self)
+    }
 
+    
+}
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.collectionViewData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: BhajansCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BhajansCollectionViewCell", for: indexPath) as! BhajansCollectionViewCell
+        cell.title.text = self.collectionViewData[indexPath.row]
+        cell.imageView.image = UIImage(named: self.collectionImages[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigate(withIndex: indexPath.row)
+    }
 }
 
