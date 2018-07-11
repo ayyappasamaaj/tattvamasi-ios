@@ -51,6 +51,8 @@
 		B14CE94620ECA0AA006997AE /* article.png in Resources */ = {isa = PBXBuildFile; fileRef = B14CE94220ECA0A9006997AE /* article.png */; };
 		B14CE94720ECA0AA006997AE /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = B14CE94320ECA0A9006997AE /* calendar.png */; };
 		B14CE94820ECA0AA006997AE /* pooja.png in Resources */ = {isa = PBXBuildFile; fileRef = B14CE94420ECA0AA006997AE /* pooja.png */; };
+		B155BC5120F58193005BCC09 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B155BC5020F58193005BCC09 /* close.png */; };
+		B155BC5320F589DD005BCC09 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = B155BC5220F589DD005BCC09 /* flower.png */; };
 		B1E76BB920F13C0A00E03EA8 /* BhajansViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E76BB820F13C0A00E03EA8 /* BhajansViewLayout.swift */; };
 		B1F0FDD020ED572A00F7E88F /* shivan.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F0FDC720ED572900F7E88F /* shivan.png */; };
 		B1F0FDD120ED572A00F7E88F /* ram.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F0FDC820ED572900F7E88F /* ram.png */; };
@@ -113,6 +115,8 @@
 		B14CE94220ECA0A9006997AE /* article.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = article.png; sourceTree = "<group>"; };
 		B14CE94320ECA0A9006997AE /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		B14CE94420ECA0AA006997AE /* pooja.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pooja.png; sourceTree = "<group>"; };
+		B155BC5020F58193005BCC09 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		B155BC5220F589DD005BCC09 /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = "<group>"; };
 		B1E76BB820F13C0A00E03EA8 /* BhajansViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhajansViewLayout.swift; sourceTree = "<group>"; };
 		B1F0FDC720ED572900F7E88F /* shivan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shivan.png; sourceTree = "<group>"; };
 		B1F0FDC820ED572900F7E88F /* ram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ram.png; sourceTree = "<group>"; };
@@ -177,7 +181,9 @@
 				09CFEA9820AF567E00DCA075 /* down-arrow.png */,
 				09CFEA9720AF567E00DCA075 /* up-arrow.png */,
 				09CFEA9B20AF6C6800DCA075 /* route.png */,
+				B155BC5020F58193005BCC09 /* close.png */,
 				09CFEA9D20AF6D4200DCA075 /* reminder.png */,
+				B155BC5220F589DD005BCC09 /* flower.png */,
 				093815772092CDAA00B7AFDD /* ayyappan-img2.png */,
 			);
 			path = Resources;
@@ -365,9 +371,11 @@
 				0999920D2090403400342686 /* Assets.xcassets in Resources */,
 				B14CE94720ECA0AA006997AE /* calendar.png in Resources */,
 				B1F0FDD120ED572A00F7E88F /* ram.png in Resources */,
+				B155BC5320F589DD005BCC09 /* flower.png in Resources */,
 				B1F0FDD320ED572A00F7E88F /* guru.png in Resources */,
 				B14CE94620ECA0AA006997AE /* article.png in Resources */,
 				B1F0FDD620ED572A00F7E88F /* ayyappan.png in Resources */,
+				B155BC5120F58193005BCC09 /* close.png in Resources */,
 				09CFEA9E20AF6D4300DCA075 /* reminder.png in Resources */,
 				09CFEA9920AF567F00DCA075 /* up-arrow.png in Resources */,
 				0938157A2092CDAA00B7AFDD /* aysa_header.png in Resources */,

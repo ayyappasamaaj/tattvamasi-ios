@@ -39,7 +39,6 @@ open class EbooksTableViewCell : UITableViewCell {
         if let data = data as? EbookData {
             
             self.selectionStyle = .none
-            
             self.superView.layer.cornerRadius = 8
             self.superView.layer.borderWidth = 1
             self.superView.layer.borderColor = UIColor (hex: "740001").cgColor
@@ -47,6 +46,16 @@ open class EbooksTableViewCell : UITableViewCell {
             self.bookName.text = data.title
             
         }
+    }
+    
+    open func setTitle(title: String) {
+        
+        self.selectionStyle = .none
+        self.superView.layer.cornerRadius = 8
+        self.superView.layer.borderWidth = 1
+        self.superView.layer.borderColor = UIColor (hex: "740001").cgColor
+        
+        self.bookName.text = title
     }
     
 }
