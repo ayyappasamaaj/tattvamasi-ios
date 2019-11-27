@@ -9,72 +9,57 @@
 import UIKit
 import FirebaseDatabase
 
-class PoojaViewController: UIViewController {
-    
-    var ref: DatabaseReference!
-    var tableData: [String] = []
-    var selectedSubCategory: String = ""
+class PoojaViewController: BaseViewController {
+
     @IBOutlet weak var categoryTableView: UITableView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
-    
+    var tableData: [String] = [] {
+        didSet {
+            self.loading.stopAnimating()
+            self.categoryTableView.reloadData()
+            self.categoryTableView.isHidden = false
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.ref = Database.database().reference()
-        self.categoryTableView.isHidden = true
-        self.getCategories()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "poojaToList") {
-            let targetVC = segue.destination as! EbookListViewController
-            targetVC.parentScreen = "Pooja"
-            targetVC.category = "pooja"
-            targetVC.subCategory = self.selectedSubCategory
-        }
+
+        categoryTableView.isHidden = true
+        getCategories()
     }
     
     func getCategories() {
-        self.ref.child("pooja_categories").observeSingleEvent(of: .value, with: { (snapshot) in
-            self.tableData = snapshot.value as! [String]
-            DispatchQueue.main.async(execute: {
-                self.loading.stopAnimating()
-                self.categoryTableView.reloadData()
-                self.categoryTableView.isHidden = false
-            })
-        }) { (error) in
-            print(error.localizedDescription)
+        EbookListWorker.getPoojaCategories { [weak self] data in
+            self?.tableData = data
         }
     }
 }
 
 extension PoojaViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return EbooksTableViewCell.height()
+        return UITableView.automaticDimension
     }
 }
 
 extension PoojaViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tableData.count;
+        return tableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.categoryTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewCell") as! EbooksTableViewCell
-        cell.setTitle(title: self.tableData[indexPath.row].capitalized)
-        return cell
+        if let cell = categoryTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewCell") as? EbooksTableViewCell {
+            cell.setTitle(title: tableData[indexPath.row].capitalized)
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedSubCategory = self.tableData[indexPath.row]
-        self.performSegue(withIdentifier: "poojaToList", sender: self)
+        let payload: [String: Any] = ["category": "pooja",
+                                      "subCategory": tableData[indexPath.row] as Any]
+        navigate(to: "EbookListViewController", payload: payload)
     }
 }
 

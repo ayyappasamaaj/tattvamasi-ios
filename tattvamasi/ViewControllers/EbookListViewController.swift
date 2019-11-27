@@ -7,103 +7,57 @@
 //
 
 import UIKit
-import FirebaseDatabase
 
-class EbookListViewController: UIViewController {
-    
-    var ref: DatabaseReference!
-    var parentScreen: String = ""
-    var category: String = ""
-    var subCategory: String = ""
-    var selectedEbook: EbookData!
-    
-    var ebookArray: [EbookData] = []
-    var ebookDictionary: Dictionary<String, Array<EbookData>> = [:]
-    var searchResultDictionary: Dictionary<String, Array<EbookData>> = [:]
-    var searchResutsSections: [String] = []
-    var sectionArray: [String] = []
-    var inSearchMode = false
-    
+
+class EbookListViewController: BaseViewController {
+
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var ebookTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+
+    var category: String?
+    var subCategory: String?
+    var selectedEbook: EbookData?
     
+    var ebookArray: [EbookData] = []
+    var ebookDictionary: [String: [EbookData]] = [:]
+    var searchResultDictionary: [String: [EbookData]] = [:]
+    var searchResutsSections: [String] = []
+    var sectionArray: [String] = []
+    var inSearchMode = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.ebookTableView.isHidden = true
-        self.ref = Database.database().reference()
-        print("Coming from: " + parentScreen + ", withCategory: " + category + ", and sub category: " + subCategory)
-        if (!self.category.isEmpty) { self.getEbookList() }
+        EbookListWorker.getEbookList(for: category, subCategory: subCategory) { [weak self] data in
+            self?.categorizeAndUpdate(ebookArray: data)
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(backToPotrait),
+                                               name: NSNotification.Name(rawValue: Constants.PDFDismissNotification), object: nil)
+    }
+
+    override func setupPayload() {
+        if let pl = payload {
+            if let category = pl["category"] as? String {
+                self.category = category
+            }
+            if let subCategory = pl["subCategory"] as? String {
+                self.subCategory = subCategory
+            }
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @objc func backToPotrait() {
         UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func goBack(_ sender: Any) {
-        switch self.parentScreen {
-        case "Home":
-            self.performSegue(withIdentifier: "listToHome", sender: self)
-            break
-        case "Bhajans":
-            self.performSegue(withIdentifier: "listToBhajans", sender: self)
-            break
-        case "Pooja":
-            self.performSegue(withIdentifier: "listToPooja", sender: self)
-            break
-        default:
-            self.performSegue(withIdentifier: "listToHome", sender: self)
-            break
-        }
-    }
-    
-    /*
-     * Calling Firebase database to get the
-     * List of books
-     *
-     */
-    func getEbookList() {
-        if (self.subCategory.isEmpty) {
-            self.ref.child(self.category).observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSArray
-                self.categorizeAndUpdate(ebookArray: value!)
-            }) { (error) in
-                print(error.localizedDescription)
-            }
-        } else {
-            self.ref.child(self.category).child(self.subCategory).observeSingleEvent(of: .value, with: { (snapshot) in
-                let value = snapshot.value as? NSArray
-                self.categorizeAndUpdate(ebookArray: value!)
-            }) { (error) in
-                DispatchQueue.main.async(execute: {
-                    self.loading.stopAnimating()
-                })
-                self.showExceptionAlert(Constants.NETWORK_ERROR_HEADER, message: Constants.NETWORK_ERROR_MSG)
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func categorizeAndUpdate(ebookArray: NSArray) {
-        var ebookList: [EbookData] = []
-        for record in ebookArray {
-            let ebook: EbookData = EbookData()
-            ebook.title = (record as! [String : AnyObject])["itemTitle"] as! String
-            ebook.url = (record as! [String : AnyObject])["fileUrl"] as! String
-            ebook.language = (record as! [String : AnyObject])["language"] as! String
-            ebookList.append(ebook)
-        }
+    func categorizeAndUpdate(ebookArray: [EbookData]) {
         
-        self.ebookArray = ebookList
-        self.ebookDictionary = ebookList.categorise { $0.language }
-        self.sectionArray = (self.ebookDictionary.keys).sorted()
+        self.ebookArray = ebookArray
+        self.ebookDictionary = ebookArray.categorise { $0.language }
+        self.sectionArray = self.ebookDictionary.keys.sorted()
         
         DispatchQueue.main.async(execute: {
             self.loading.stopAnimating()
@@ -119,88 +73,66 @@ class EbookListViewController: UIViewController {
             return
         }
         
-        let ebookList: [EbookData] = self.ebookArray.filter { $0.title.lowercased().range(of: searchText.lowercased()) != nil }
+        let ebookList = self.ebookArray.filter {
+            $0.title.lowercased().range(of: searchText.lowercased()) != nil
+        }
         self.searchResultDictionary = ebookList.categorise { $0.language }
-        self.searchResutsSections = (self.searchResultDictionary.keys).sorted()
+        self.searchResutsSections = self.searchResultDictionary.keys.sorted()
     }
 }
 
 extension EbookListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return EbooksTableViewCell.height()
+        return EbooksTableViewCell.cellHeight
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return EbooksTableViewHeader.cellHeight
     }
 }
 
 extension EbookListViewController : UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if (inSearchMode) {
-            return self.searchResutsSections.count
-        }
-        return self.sectionArray.count;
+        return inSearchMode ? searchResutsSections.count : sectionArray.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        var header: String = ""
-        if (inSearchMode) {
-            header = self.searchResutsSections[section].uppercased()
-        } else {
-            header = self.sectionArray[section].uppercased()
+        let header = inSearchMode ? searchResutsSections[section].uppercased() : sectionArray[section].uppercased()
+        if let cell = self.ebookTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewHeader") as? EbooksTableViewHeader {
+            cell.sectionName.text = header
+            return cell
         }
-        
-        let cell = self.ebookTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewHeader") as! EbooksTableViewHeader
-        cell.setData(header)
-        return cell
+        return UIView()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (inSearchMode) {
-            let sectionName = self.searchResutsSections[section]
-            let dataArray = self.searchResultDictionary[sectionName]
-            return (dataArray?.count)!
-        } else {
-            let sectionName = self.sectionArray[section]
-            let dataArray = self.ebookDictionary[sectionName]
-            return (dataArray?.count)!
-        }
+        let sectionName = inSearchMode ? searchResutsSections[section] : sectionArray[section]
+        let dataArray = inSearchMode ? searchResultDictionary[sectionName] : ebookDictionary[sectionName]
+        return dataArray?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var dataArray: Array<EbookData> = []
-        
-        if (inSearchMode) {
-            let sectionName = self.searchResutsSections[indexPath.section]
-            dataArray = self.searchResultDictionary[sectionName]!
-        } else {
-            let sectionName = self.sectionArray[indexPath.section]
-            dataArray = self.ebookDictionary[sectionName]!
+        let sectionName = inSearchMode ? searchResutsSections[indexPath.section] : sectionArray[indexPath.section]
+        guard let dataArray = inSearchMode ? searchResultDictionary[sectionName] : ebookDictionary[sectionName],
+            let cell = self.ebookTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewCell") as? EbooksTableViewCell else {
+                return UITableViewCell()
         }
-        
+
         let data: EbookData = dataArray[indexPath.row]
-        let cell = self.ebookTableView.dequeueReusableCell(withIdentifier: "EbooksTableViewCell") as! EbooksTableViewCell
         cell.setData(data)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var dataArray: Array<EbookData> = []
-        
-        if (inSearchMode) {
-            let sectionName = self.searchResutsSections[indexPath.section]
-            dataArray = self.searchResultDictionary[sectionName]!
-        } else {
-            let sectionName = self.sectionArray[indexPath.section]
-            dataArray = self.ebookDictionary[sectionName]!
+        let sectionName = inSearchMode ? searchResutsSections[indexPath.section] : sectionArray[indexPath.section]
+        guard let dataArray = inSearchMode ? searchResultDictionary[sectionName] : ebookDictionary[sectionName] else {
+            return
         }
         
-        let data: EbookData = dataArray[indexPath.row]
-        let pdfView = self.storyboard?.instantiateViewController(withIdentifier: "PdfViewController") as! PdfViewController
-        pdfView.ebookData = data
-        pdfView.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        self.present(pdfView, animated: true, completion: nil)
+        let ebook = dataArray[indexPath.row]
+        navigate(to: "PdfViewController", transition: .present, payload: ["ebook": ebook])
     }
 }
 

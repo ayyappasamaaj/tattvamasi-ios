@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0919F41720981321004C74B1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F41620981321004C74B1 /* EventDetailsViewController.swift */; };
 		0919F428209814C7004C74B1 /* EbookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F427209814C7004C74B1 /* EbookData.swift */; };
 		0919F42A209814E3004C74B1 /* EventsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F429209814E3004C74B1 /* EventsData.swift */; };
 		0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F42B20982228004C74B1 /* PoojaViewController.swift */; };
@@ -44,6 +43,11 @@
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
 		9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */; };
+		B10030FA238908A8006C4A0D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10030F9238908A8006C4A0D /* BaseViewController.swift */; };
+		B10030FC23890BE6006C4A0D /* HomeTransitionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10030FB23890BE6006C4A0D /* HomeTransitionWorker.swift */; };
+		B10030FE23891319006C4A0D /* BhajanTransitionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10030FD23891319006C4A0D /* BhajanTransitionWorker.swift */; };
+		B1003101238B45D6006C4A0D /* EbookListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1003100238B45D6006C4A0D /* EbookListWorker.swift */; };
+		B12ED9EA238DFC050095D493 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12ED9E9238DFC050095D493 /* WKWebView+Extension.swift */; };
 		B13C51D120F14B5300F26D42 /* HomeViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C51D020F14B5300F26D42 /* HomeViewLayout.swift */; };
 		B14CE93E20EC9BE9006997AE /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = B14CE93D20EC9BE9006997AE /* BG.png */; };
 		B14CE94020EC9D37006997AE /* bhajan.png in Resources */ = {isa = PBXBuildFile; fileRef = B14CE93F20EC9D37006997AE /* bhajan.png */; };
@@ -54,6 +58,7 @@
 		B155BC5120F58193005BCC09 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = B155BC5020F58193005BCC09 /* close.png */; };
 		B155BC5320F589DD005BCC09 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = B155BC5220F589DD005BCC09 /* flower.png */; };
 		B1E76BB920F13C0A00E03EA8 /* BhajansViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E76BB820F13C0A00E03EA8 /* BhajansViewLayout.swift */; };
+		B1EEE053238C9F0C007B4B1A /* EventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEE052238C9F0C007B4B1A /* EventsWorker.swift */; };
 		B1F0FDD020ED572A00F7E88F /* shivan.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F0FDC720ED572900F7E88F /* shivan.png */; };
 		B1F0FDD120ED572A00F7E88F /* ram.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F0FDC820ED572900F7E88F /* ram.png */; };
 		B1F0FDD220ED572A00F7E88F /* ganesh.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F0FDC920ED572900F7E88F /* ganesh.png */; };
@@ -67,7 +72,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0919F41620981321004C74B1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		0919F427209814C7004C74B1 /* EbookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookData.swift; sourceTree = "<group>"; };
 		0919F429209814E3004C74B1 /* EventsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsData.swift; sourceTree = "<group>"; };
 		0919F42B20982228004C74B1 /* PoojaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoojaViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,11 @@
 		70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.release.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.release.xcconfig"; sourceTree = "<group>"; };
 		8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tattvamasi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10030F9238908A8006C4A0D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B10030FB23890BE6006C4A0D /* HomeTransitionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTransitionWorker.swift; sourceTree = "<group>"; };
+		B10030FD23891319006C4A0D /* BhajanTransitionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhajanTransitionWorker.swift; sourceTree = "<group>"; };
+		B1003100238B45D6006C4A0D /* EbookListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EbookListWorker.swift; sourceTree = "<group>"; };
+		B12ED9E9238DFC050095D493 /* WKWebView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extension.swift"; sourceTree = "<group>"; };
 		B13C51D020F14B5300F26D42 /* HomeViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewLayout.swift; sourceTree = "<group>"; };
 		B14CE93D20EC9BE9006997AE /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		B14CE93F20EC9D37006997AE /* bhajan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bhajan.png; sourceTree = "<group>"; };
@@ -118,6 +127,7 @@
 		B155BC5020F58193005BCC09 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		B155BC5220F589DD005BCC09 /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = "<group>"; };
 		B1E76BB820F13C0A00E03EA8 /* BhajansViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhajansViewLayout.swift; sourceTree = "<group>"; };
+		B1EEE052238C9F0C007B4B1A /* EventsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsWorker.swift; sourceTree = "<group>"; };
 		B1F0FDC720ED572900F7E88F /* shivan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shivan.png; sourceTree = "<group>"; };
 		B1F0FDC820ED572900F7E88F /* ram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ram.png; sourceTree = "<group>"; };
 		B1F0FDC920ED572900F7E88F /* ganesh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ganesh.png; sourceTree = "<group>"; };
@@ -155,13 +165,13 @@
 		093815722092CC9000B7AFDD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B10030F9238908A8006C4A0D /* BaseViewController.swift */,
 				093815732092CCAD00B7AFDD /* HomeViewController.swift */,
 				093815832093C34E00B7AFDD /* BhajansViewController.swift */,
 				0919F42B20982228004C74B1 /* PoojaViewController.swift */,
 				0919F42D2098235C004C74B1 /* EbookListViewController.swift */,
 				0919F42F20982456004C74B1 /* PdfViewController.swift */,
 				093815812093C12300B7AFDD /* EventsViewController.swift */,
-				0919F41620981321004C74B1 /* EventDetailsViewController.swift */,
 				0938157B2092CF6E00B7AFDD /* AboutUsViewController.swift */,
 				0938157F2092E1C900B7AFDD /* DonateViewController.swift */,
 			);
@@ -223,6 +233,7 @@
 		099992042090403400342686 /* tattvamasi */ = {
 			isa = PBXGroup;
 			children = (
+				B10030FF2389C247006C4A0D /* Workers */,
 				093815762092CD9200B7AFDD /* Resources */,
 				093815722092CC9000B7AFDD /* ViewControllers */,
 				0919F41820981460004C74B1 /* Models */,
@@ -243,6 +254,7 @@
 		09B9FF28209AC71D0082A96E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B12ED9E9238DFC050095D493 /* WKWebView+Extension.swift */,
 				09B9FF2B209AC81C0082A96E /* String.swift */,
 				09B9FF29209AC7380082A96E /* UIColor.swift */,
 				093A4403209C149D00AB9418 /* Date.swift */,
@@ -258,6 +270,17 @@
 				8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B10030FF2389C247006C4A0D /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				B10030FB23890BE6006C4A0D /* HomeTransitionWorker.swift */,
+				B10030FD23891319006C4A0D /* BhajanTransitionWorker.swift */,
+				B1003100238B45D6006C4A0D /* EbookListWorker.swift */,
+				B1EEE052238C9F0C007B4B1A /* EventsWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		B14CE93C20EC9BC5006997AE /* HomeIcons */ = {
@@ -332,6 +355,7 @@
 				TargetAttributes = {
 					099992012090403400342686 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1100;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -421,7 +445,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -434,7 +458,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -446,11 +470,13 @@
 			files = (
 				099992062090403400342686 /* AppDelegate.swift in Sources */,
 				09B9FF2A209AC7380082A96E /* UIColor.swift in Sources */,
+				B1003101238B45D6006C4A0D /* EbookListWorker.swift in Sources */,
 				B1F0FDDA20ED6E1C00F7E88F /* BhajansCollectionViewCell.swift in Sources */,
+				B10030FE23891319006C4A0D /* BhajanTransitionWorker.swift in Sources */,
 				093A4406209C229700AB9418 /* UIViewController.swift in Sources */,
-				0919F41720981321004C74B1 /* EventDetailsViewController.swift in Sources */,
 				0938157C2092CF6E00B7AFDD /* AboutUsViewController.swift in Sources */,
 				0919F42A209814E3004C74B1 /* EventsData.swift in Sources */,
+				B1EEE053238C9F0C007B4B1A /* EventsWorker.swift in Sources */,
 				093815742092CCAE00B7AFDD /* HomeViewController.swift in Sources */,
 				0957DE2D209CFC6A00CAC83C /* EbooksTableViewCell.swift in Sources */,
 				B13C51D120F14B5300F26D42 /* HomeViewLayout.swift in Sources */,
@@ -461,9 +487,12 @@
 				093815802092E1C900B7AFDD /* DonateViewController.swift in Sources */,
 				093815842093C34E00B7AFDD /* BhajansViewController.swift in Sources */,
 				0919F42C20982228004C74B1 /* PoojaViewController.swift in Sources */,
+				B12ED9EA238DFC050095D493 /* WKWebView+Extension.swift in Sources */,
+				B10030FC23890BE6006C4A0D /* HomeTransitionWorker.swift in Sources */,
 				093A4402209C06FF00AB9418 /* EventsTableViewCell.swift in Sources */,
 				09B9FF2C209AC81C0082A96E /* String.swift in Sources */,
 				093815822093C12300B7AFDD /* EventsViewController.swift in Sources */,
+				B10030FA238908A8006C4A0D /* BaseViewController.swift in Sources */,
 				B1E76BB920F13C0A00E03EA8 /* BhajansViewLayout.swift in Sources */,
 				096AB82C20A29BDC00FB0680 /* EbooksTableViewHeader.swift in Sources */,
 				0957DE2F209D23F500CAC83C /* Sequence.swift in Sources */,
@@ -616,13 +645,13 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C4N6H4A35P;
 				INFOPLIST_FILE = tattvamasi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2530a73-5472-436b-a7e6-9545a382a4ca";
 				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Dev";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -635,13 +664,13 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C4N6H4A35P;
 				INFOPLIST_FILE = tattvamasi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2530a73-5472-436b-a7e6-9545a382a4ca";
 				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Dev";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
     
     // Static Values
-    
+    static let PDFDismissNotification       = "DismissPDF"
     
     // Static URLs
     static let ITUNES_URL                   = "https://itunes.apple.com/us/app/tattvamasi/id1292928285?mt=8"

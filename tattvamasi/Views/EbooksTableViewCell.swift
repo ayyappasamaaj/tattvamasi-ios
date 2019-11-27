@@ -8,47 +8,22 @@
 
 import UIKit
 
-open class EbooksTableViewCell : UITableViewCell {
-    
+class EbooksTableViewCell: UITableViewCell {
+
+    static var cellHeight: CGFloat = 60
     @IBOutlet var superView: UIView!
-    @IBOutlet var bookName: UILabel!
+    @IBOutlet var bookName: UILabel! 
     
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+    func setData(_ data: EbookData) {
+        self.selectionStyle = .none
+        self.superView.layer.cornerRadius = 8
+        self.superView.layer.borderWidth = 1
+        self.superView.layer.borderColor = UIColor (hex: "740001").cgColor
+
+        self.bookName.text = data.title
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-    }
-    
-    open override func awakeFromNib() {
-    }
-    
-    open func setup() {
-    }
-    
-    open class func height() -> CGFloat {
-        return 60
-        
-    }
-    
-    open func setData(_ data: Any?) {
-        if let data = data as? EbookData {
-            
-            self.selectionStyle = .none
-            self.superView.layer.cornerRadius = 8
-            self.superView.layer.borderWidth = 1
-            self.superView.layer.borderColor = UIColor (hex: "740001").cgColor
-            
-            self.bookName.text = data.title
-            
-        }
-    }
-    
-    open func setTitle(title: String) {
+    func setTitle(title: String) {
         
         self.selectionStyle = .none
         self.superView.layer.cornerRadius = 8

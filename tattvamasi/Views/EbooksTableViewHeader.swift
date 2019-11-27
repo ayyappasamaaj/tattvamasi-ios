@@ -8,34 +8,8 @@
 
 import UIKit
 
-open class EbooksTableViewHeader : UITableViewCell {
-    
+class EbooksTableViewHeader: UITableViewCell {
+
+    static var cellHeight: CGFloat = 40
     @IBOutlet var sectionName: UILabel!
-    
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setup()
-    }
-    
-    open override func awakeFromNib() {
-    }
-    
-    open func setup() {
-    }
-    
-    open class func height() -> CGFloat {
-        return 40
-        
-    }
-    
-    open func setData(_ data: String) {
-        self.sectionName.text = data
-    }
-    
 }

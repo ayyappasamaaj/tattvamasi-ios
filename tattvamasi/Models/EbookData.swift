@@ -8,8 +8,8 @@
 
 import Foundation
 
-class EbookData: NSObject {
-    var title: String = ""
-    var url: String = ""
-    var language: String = ""
+struct EbookData {
+    let title: String
+    let url: String
+    let language: String
 }

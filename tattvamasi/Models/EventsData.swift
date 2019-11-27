@@ -8,15 +8,15 @@
 
 import Foundation
 
-class EventsData: NSObject {
-    var name: String = ""
-    var desc: String = ""
-    var registrationLink: String = ""
-    var venue: String = ""
-    var dateString: String = ""
-    var date: Date!
-    var endDate: Date!
-    var latitude: Double!
-    var longitude: Double!
-    var showDetails: Bool = false
+struct EventsData {
+    let name: String
+    let desc: String
+    let registrationLink: String
+    let venue: String
+    let dateString: String
+    let date: Date?
+    let endDate: Date?
+    let latitude: Double?
+    let longitude: Double?
+    var showDetails: Bool?
 }

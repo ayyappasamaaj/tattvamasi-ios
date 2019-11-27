@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DonateViewController: UIViewController {
+class DonateViewController: BaseViewController {
     
     @IBOutlet weak var donateButton: UIButton!
     
@@ -21,13 +21,11 @@ class DonateViewController: UIViewController {
         self.donateButton.layer.borderColor = UIColor (hex: "740001").cgColor
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func donate(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: Constants.PAYPAL_DONATION_URL)!)
+        guard let url = URL(string: Constants.PAYPAL_DONATION_URL) else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
 }

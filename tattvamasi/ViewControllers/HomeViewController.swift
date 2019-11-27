@@ -10,39 +10,24 @@ import UIKit
 import AVFoundation
 import StoreKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var collectionViewLayout: HomeViewLayout!
     let defaults = UserDefaults.standard
-    var collectionViewData: [String] = ["Bhajans", "Pooja", "Articles", "Events", "Donate", "About us"]
-    var collectionImages: [String] = ["bhajan.png", "pooja.png", "article.png", "calendar.png", "donate.png", "ayyappan.png"]
+    var collectionViewData: [HomeTransition]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        collectionViewLayout = HomeViewLayout()
-        collectionView.collectionViewLayout = collectionViewLayout
-        self.checkForAppUpdates()
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        collectionViewData = HomeTransitionWorker().getHomeTransitionItems()
+        collectionView.collectionViewLayout = HomeViewLayout()
+        self.checkForAppUpdates()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.checkForRating()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "homeToList") {
-            let targetVC = segue.destination as! EbookListViewController
-            targetVC.parentScreen = "Home"
-            targetVC.category = "articles"
-            targetVC.subCategory = ""
-        }
     }
     
     /*
@@ -50,44 +35,46 @@ class HomeViewController: UIViewController {
      * Install new update logic
      */
     func checkForAppUpdates() {
-        
-        let identifier: String = (Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String)!
-        let version: String = (Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String)!
-        let storeInfoURL = URL(string:Constants.ITUNES_LOOKUP_API + identifier)!
+
+        guard let identifier: String = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String,
+            let version: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String,
+            let storeInfoURL = URL(string:Constants.ITUNES_LOOKUP_API + identifier) else {
+                return
+        }
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: storeInfoURL, completionHandler: {
-            (data, response, error) in
-            
-            if error != nil {
-                
-            } else {
-                do {
-                    if let jsonData = try JSONSerialization.jsonObject(with: data!) as? [String:Any] {
-                        if let results = jsonData["results"] as? [[String:Any]] {
-                            let appStoreVersion = (results[0]["version"] as? String)!
-                            
-                            let currentVersion: Float = Float(version)!
-                            let storeVersion: Float = Float(appStoreVersion)!
-                            
-                            if currentVersion < storeVersion {
-                                let alert = UIAlertController(title: Constants.UPDATE_ALERT_HEADER, message: Constants.UPDATE_ALERT_MSG, preferredStyle: UIAlertControllerStyle.alert)
-                                alert.addAction(UIAlertAction(title: Constants.UPDATE_ALERT_BUTTON, style: UIAlertActionStyle.default, handler: self.updateHandler))
-                                self.present(alert, animated: true, completion: nil)
-                            } 
-                        }
-                    }
-                } catch {
-                    
+        let task = session.dataTask(with: storeInfoURL, completionHandler: { (data, response, error) in
+            guard error == nil else { return }
+            do {
+                guard let jsonData = try JSONSerialization.jsonObject(with: data!) as? [String:Any],
+                    let results = jsonData["results"] as? [[String:Any]],
+                    let appStoreVersion = results[0]["version"] as? String,
+                    let currentVersion = Float(version),
+                    let storeVersion = Float(appStoreVersion) else {
+                        return
                 }
+
+                if currentVersion < storeVersion {
+                    let alert = UIAlertController(title: Constants.UPDATE_ALERT_HEADER, message: Constants.UPDATE_ALERT_MSG, preferredStyle: UIAlertController.Style.alert)
+                    let action = UIAlertAction(title: Constants.UPDATE_ALERT_BUTTON, style: UIAlertAction.Style.default) { [weak self] _ in
+                        self?.updateHandler()
+                    }
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            } catch {
+
             }
         })
         task.resume()
     }
     
-    func updateHandler(alert: UIAlertAction!) {
-        UIApplication.shared.openURL(URL(string: Constants.ITUNES_URL)!)
+    func updateHandler() {
+        guard let url = URL(string: Constants.ITUNES_URL) else {
+            return
+        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     /*
@@ -113,10 +100,10 @@ class HomeViewController: UIViewController {
     }
     
     func askForRating() {
-        let alert = UIAlertController(title: Constants.APP_STORE_RATING_HEADER, message: Constants.APP_STORE_RATING_MSG, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: Constants.APP_STORE_RATING_YES, style: UIAlertActionStyle.default, handler: self.showRating))
-        alert.addAction(UIAlertAction(title: Constants.APP_STORE_RATING_NO, style: UIAlertActionStyle.default, handler: self.noThanks))
-        alert.addAction(UIAlertAction(title: Constants.APP_STORE_RATING_LATER, style: UIAlertActionStyle.default, handler: self.remindMeLater))
+        let alert = UIAlertController(title: Constants.APP_STORE_RATING_HEADER, message: Constants.APP_STORE_RATING_MSG, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: Constants.APP_STORE_RATING_YES, style: UIAlertAction.Style.default, handler: self.showRating))
+        alert.addAction(UIAlertAction(title: Constants.APP_STORE_RATING_NO, style: UIAlertAction.Style.default, handler: self.noThanks))
+        alert.addAction(UIAlertAction(title: Constants.APP_STORE_RATING_LATER, style: UIAlertAction.Style.default, handler: self.remindMeLater))
         self.present(alert, animated: true, completion: nil)
         
     }
@@ -127,7 +114,10 @@ class HomeViewController: UIViewController {
         if #available(iOS 10.3, *) {
             SKStoreReviewController.requestReview()
         } else {
-            UIApplication.shared.openURL(URL(string: Constants.ITUNES_URL_REVIEW)!)
+            guard let url = URL(string: Constants.ITUNES_URL_REVIEW) else {
+                return
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
@@ -140,57 +130,34 @@ class HomeViewController: UIViewController {
         defaults.set(false, forKey: "allowRating")
         defaults.set(0, forKey: "rateCounter")
     }
-
-    /*
-     * Code for Managing the
-     * Navigation from Collection View
-     */
-    func navigate(withIndex: Int) {
-     
-        var identifierString = ""
-        
-        switch withIndex {
-        case 0:
-            identifierString = "homeToBhajans"
-            break;
-        case 1:
-            identifierString = "homeToPooja"
-            break;
-        case 2:
-            identifierString = "homeToList"
-            break;
-        case 3:
-            identifierString = "homeToEvents"
-            break;
-        case 4:
-            identifierString = "homeToDonate"
-            break;
-        case 5:
-            identifierString = "homeToAbout"
-            break;
-        default:
-            break;
-        }
-        self.performSegue(withIdentifier: identifierString, sender: self)
-    }
-
-    
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.collectionViewData.count
+        guard let data = collectionViewData else {
+            return 0
+        }
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: BhajansCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BhajansCollectionViewCell", for: indexPath) as! BhajansCollectionViewCell
-        cell.title.text = self.collectionViewData[indexPath.row]
-        cell.imageView.image = UIImage(named: self.collectionImages[indexPath.row])
+        guard let data = collectionViewData,
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BhajansCollectionViewCell", for: indexPath) as? BhajansCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+
+        cell.title.text = data[indexPath.row].title
+        cell.imageView.image = UIImage(named: data[indexPath.row].imageName)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigate(withIndex: indexPath.row)
+        guard let data = collectionViewData else {
+            return
+        }
+
+        let payload: [String: Any]? = (indexPath.row == 2) ? ["category": "articles"] : nil
+        navigate(to: data[indexPath.row].storyboardId, payload: payload)
     }
 }
 

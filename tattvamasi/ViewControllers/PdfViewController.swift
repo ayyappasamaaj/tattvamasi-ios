@@ -7,59 +7,67 @@
 //
 
 import UIKit
+import WebKit
 
-class PdfViewController: UIViewController, UIWebViewDelegate {
+class PdfViewController: BaseViewController, UIWebViewDelegate {
     
-    var ebookData: EbookData!
+    var ebookData: EbookData?
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var loading: UIActivityIndicatorView!
-    @IBOutlet weak var pdfWebView: UIWebView!
+    @IBOutlet weak var backingView: UIView!
+    var webView: WKWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        setupWebView()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    override func setupPayload() {
+        if let book = payload?["ebook"] as? EbookData {
+            ebookData = book
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.header.text = self.ebookData.title
-        let url = URL (string: self.ebookData.url)
-        let requestObj = URLRequest(url: url!);
-        self.pdfWebView.delegate = self
-        self.pdfWebView.loadRequest(requestObj)
-        self.pdfWebView.isHidden = true
+        super.viewWillAppear(animated)
+
+        if let book = ebookData,
+            let url = URL(string: book.url) {
+            header.text = book.title
+            webView?.load(URLRequest(url: url))
+            loading.startAnimating()
+        }
+    }
+
+    func setupWebView() {
+        let config = WKWebViewConfiguration()
+        webView = WKWebView(viewController: self, backingView: self.backingView, configuration: config)
+        webView?.navigationDelegate = self
     }
     
     @objc func canRotate() -> Void {}
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if (self.isMovingFromParentViewController) {
-            UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
-        }
-    }
-    
-    func webViewDidStartLoad(_ webView : UIWebView) {
-        self.loading.startAnimating()
-    }
-    
-    func webViewDidFinishLoad(_ webView : UIWebView) {
-        self.loading.stopAnimating()
-        self.pdfWebView.isHidden = false
-    }
-    
-    
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        self.loading.stopAnimating()
-        self.showExceptionAlert(Constants.WEBVIEW_LOAD_ERROR_HEADER, message: Constants.WEBVIEW_LOAD_ERROR_MSG)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Constants.PDFDismissNotification), object: nil)
     }
     
     @IBAction func closePdfView(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil);
+        self.dismiss(animated: true, completion: nil);
     }
-    
+
+}
+
+extension PdfViewController: WKNavigationDelegate {
+
+    func webView(_: WKWebView, didFinish navigation: WKNavigation!) {
+        loading.stopAnimating()
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        loading.stopAnimating()
+        self.showExceptionAlert(Constants.WEBVIEW_LOAD_ERROR_HEADER, message: Constants.WEBVIEW_LOAD_ERROR_MSG)
+    }
 }
 
