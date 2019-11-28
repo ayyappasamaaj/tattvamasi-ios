@@ -642,15 +642,17 @@
 			baseConfigurationReference = 70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C4N6H4A35P;
 				INFOPLIST_FILE = tattvamasi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2530a73-5472-436b-a7e6-9545a382a4ca";
-				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Prod";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -661,15 +663,17 @@
 			baseConfigurationReference = 7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C4N6H4A35P;
 				INFOPLIST_FILE = tattvamasi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2530a73-5472-436b-a7e6-9545a382a4ca";
-				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Prod";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
