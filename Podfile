@@ -6,7 +6,6 @@ target 'tattvamasi' do
   use_frameworks!
 
   # Pods for tattvamasi
-
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 
