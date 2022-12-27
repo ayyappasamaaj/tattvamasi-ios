@@ -35,8 +35,19 @@ class BaseViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "aysa_header.png")
         self.navigationItem.titleView = imageView
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.45, green: 0, blue: 0, alpha: 1.0)
-        self.navigationController?.navigationBar.isTranslucent = false
+
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(red: 0.45, green: 0, blue: 0, alpha: 1.0)
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            // Fallback on earlier versions
+            self.navigationItem.titleView = imageView
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.45, green: 0, blue: 0, alpha: 1.0)
+            self.navigationController?.navigationBar.isTranslucent = false
+        }
     }
 
     func navigate(to destination: String, storyboard: String = "Main", transition: Transition = .push, payload: [String: Any]? = nil) {
