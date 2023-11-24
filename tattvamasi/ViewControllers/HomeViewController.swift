@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import StoreKit
+import firebase_auth
 
 class HomeViewController: BaseViewController {
     
@@ -23,6 +24,7 @@ class HomeViewController: BaseViewController {
         collectionViewData = HomeTransitionWorker().getHomeTransitionItems()
         collectionView.collectionViewLayout = HomeViewLayout()
         self.checkForAppUpdates()
+        print(TestClass().methodToTest())
     }
     
     override func viewDidAppear(_ animated: Bool) {
