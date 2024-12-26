@@ -42,6 +42,7 @@
 		09CFEA9E20AF6D4300DCA075 /* reminder.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CFEA9D20AF6D4200DCA075 /* reminder.png */; };
 		09E0FE2D20904E2200C44BF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2920904E2200C44BF7 /* LaunchScreen.xib */; };
 		09E0FE2E20904E2200C44BF7 /* LaunchScreen-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09E0FE2B20904E2200C44BF7 /* LaunchScreen-iPad.xib */; };
+		522D887E2B13147B00A9A9E1 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522D887D2B13147B00A9A9E1 /* UIDevice+Extension.swift */; };
 		9A6DFB9F92EE790A614DD14E /* Pods_tattvamasi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */; };
 		B10030FA238908A8006C4A0D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10030F9238908A8006C4A0D /* BaseViewController.swift */; };
 		B10030FC23890BE6006C4A0D /* HomeTransitionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10030FB23890BE6006C4A0D /* HomeTransitionWorker.swift */; };
@@ -109,6 +110,7 @@
 		09CFEA9D20AF6D4200DCA075 /* reminder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reminder.png; sourceTree = "<group>"; };
 		09E0FE2A20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09E0FE2C20904E2200C44BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/LaunchScreen-iPad.xib"; sourceTree = "<group>"; };
+		522D887D2B13147B00A9A9E1 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		70B7758C35E641B6122DC946 /* Pods-tattvamasi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB49CE3B98AB571C70B1D26 /* Pods-tattvamasi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tattvamasi.release.xcconfig"; path = "Pods/Target Support Files/Pods-tattvamasi/Pods-tattvamasi.release.xcconfig"; sourceTree = "<group>"; };
 		8F5EB9D401374383D553270D /* Pods_tattvamasi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tattvamasi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +262,7 @@
 				093A4403209C149D00AB9418 /* Date.swift */,
 				093A4405209C229700AB9418 /* UIViewController.swift */,
 				0957DE2E209D23F500CAC83C /* Sequence.swift */,
+				522D887D2B13147B00A9A9E1 /* UIDevice+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -446,13 +449,27 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-tattvamasi/Pods-tattvamasi-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseSharedSwift/FirebaseSharedSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAppCheckInterop.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSharedSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -481,6 +498,7 @@
 				0957DE2D209CFC6A00CAC83C /* EbooksTableViewCell.swift in Sources */,
 				B13C51D120F14B5300F26D42 /* HomeViewLayout.swift in Sources */,
 				093A4404209C149D00AB9418 /* Date.swift in Sources */,
+				522D887E2B13147B00A9A9E1 /* UIDevice+Extension.swift in Sources */,
 				0919F42E2098235C004C74B1 /* EbookListViewController.swift in Sources */,
 				0919F428209814C7004C74B1 /* EbookData.swift in Sources */,
 				0919F43220982F44004C74B1 /* Constants.swift in Sources */,
@@ -578,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -629,7 +647,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -645,14 +663,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C4N6H4A35P;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = C4N6H4A35P;
 				INFOPLIST_FILE = tattvamasi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2530a73-5472-436b-a7e6-9545a382a4ca";
 				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Dev";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tattvamasi Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -666,14 +691,21 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = C4N6H4A35P;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = C4N6H4A35P;
 				INFOPLIST_FILE = tattvamasi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ayyappasamaaj.tattvamasi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c2530a73-5472-436b-a7e6-9545a382a4ca";
 				PROVISIONING_PROFILE_SPECIFIER = "Tattvamasi Dev";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Tattvamasi Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

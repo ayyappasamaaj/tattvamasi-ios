@@ -20,15 +20,41 @@ class HomeViewLayout: UICollectionViewFlowLayout {
         setupLayout()
     }
     
+    var numberOfColumns: CGFloat {
+        guard UIDevice.isIpad() else {
+            return 2
+        }
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            return 2
+        case .landscapeLeft, .landscapeRight:
+            return 3
+        default:
+            return 2
+        }
+    }
+    
+    var numberOfRows: CGFloat {
+        guard UIDevice.isIpad() else {
+            return 3
+        }
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            return 3
+        case .landscapeLeft, .landscapeRight:
+            return 2
+        default:
+            return 3
+        }
+    }
+    
     override var itemSize: CGSize {
         set {
             
         }
         get {
-            let numberOfColumns: CGFloat = 2
-            let numberOfRows: CGFloat = 3
             let headerHeight: CGFloat = 64
-            let iPadPadding: CGFloat = (UIDevice.current.userInterfaceIdiom == .pad) ? 10 : 0
+            let iPadPadding: CGFloat = UIDevice.isIpad() ? 10 : 0
             
             let screenSize = UIScreen.main.bounds
             let screenWidth = screenSize.width

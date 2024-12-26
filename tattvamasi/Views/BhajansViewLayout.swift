@@ -20,22 +20,39 @@ class BhajansViewLayout: UICollectionViewFlowLayout {
         setupLayout()
     }
     
+    var numberOfColumns: CGFloat {
+        guard UIDevice.isIpad() else {
+            return 3
+        }
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            return 3
+        case .landscapeLeft, .landscapeRight:
+            return 4
+        default:
+            return 3
+        }
+    }
+    
     override var itemSize: CGSize {
         set {
             
         }
         get {
-            let numberOfColumns: CGFloat = 3
             let numberOfRows: CGFloat = 3
             let headerHeight: CGFloat = 64
-            let iPadPadding: CGFloat = (UIDevice.current.userInterfaceIdiom == .pad) ? 10 : 0
+            let iPadPadding: CGFloat = UIDevice.isIpad() ? 10 : 0
             
             let screenSize = UIScreen.main.bounds
             let screenWidth = screenSize.width
             let screenHeight = screenSize.height
             
+            print(screenWidth)
+            print(screenHeight)
             let itemWidth: CGFloat = (screenWidth - (numberOfColumns - 1) - iPadPadding) / numberOfColumns
             let itemHeight: CGFloat = (screenHeight - (numberOfRows - 1) - headerHeight) / numberOfRows
+            print(itemWidth)
+            print(itemHeight)
             return CGSize(width: itemWidth, height: itemHeight)
         }
     }

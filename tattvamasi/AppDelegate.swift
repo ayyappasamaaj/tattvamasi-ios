@@ -44,6 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        // Allow all orientation for iPad
+        if UIDevice.isIpad() {
+            return .all
+        }
+        
+        // Lock to portrait for iPhone.
         if let rootViewController = self.topViewControllerWithRootViewController(rootViewController: window?.rootViewController) {
             if (rootViewController.responds(to: Selector(("canRotate")))) {
                 // Unlock landscape view orientations for this view controller

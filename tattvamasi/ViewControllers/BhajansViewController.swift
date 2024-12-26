@@ -20,6 +20,11 @@ class BhajansViewController: BaseViewController {
         collectionViewData = BhajanTransitionWorker().getTransitionItems()
         collectionView.collectionViewLayout = BhajansViewLayout()
     }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        collectionView.collectionViewLayout = BhajansViewLayout()
+        view.setNeedsLayout()
+    }
 }
 
 extension BhajansViewController: UICollectionViewDataSource, UICollectionViewDelegate {

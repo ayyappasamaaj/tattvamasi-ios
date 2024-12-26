@@ -30,6 +30,11 @@ class HomeViewController: BaseViewController {
         self.checkForRating()
     }
     
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        collectionView.collectionViewLayout = HomeViewLayout()
+        view.setNeedsLayout()
+    }
+    
     /*
      * Code for Managing the
      * Install new update logic
