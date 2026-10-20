@@ -17,7 +17,7 @@ class HomeTransitionWorker {
     func getHomeTransitionItems() -> [HomeTransition] {
         var transitionItems: [HomeTransition] = []
         transitionItems.append(HomeTransition(title: "Bhajans", imageName: "bhajan.png", storyboardId: "BhajansViewController"))
-        transitionItems.append(HomeTransition(title: "Pooja", imageName: "pooja.png", storyboardId: "PoojaViewController"))
+        transitionItems.append(HomeTransition(title: "Puja", imageName: "pooja.png", storyboardId: "PoojaViewController"))
         transitionItems.append(HomeTransition(title: "Articles", imageName: "article.png", storyboardId: "EbookListViewController"))
         transitionItems.append(HomeTransition(title: "Events", imageName: "calendar.png", storyboardId: "EventsViewController"))
         transitionItems.append(HomeTransition(title: "Donate", imageName: "donate.png", storyboardId: "DonateViewController"))

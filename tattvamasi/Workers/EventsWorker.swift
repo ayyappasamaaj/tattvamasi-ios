@@ -40,7 +40,9 @@ class EventsWorker {
                 let longitude = event["longitude"] as? Double
                 let dateString = date.dateAsDescription()
 
-                if date > Date() {
+                // Keep an event listed until it ends, so a multi-day event (e.g. the Mandalam season)
+                // doesn't disappear on its first day
+                if endDate > Date() {
                     events.append(EventsData(name: name, desc: desc, registrationLink: registrationLink, venue: venue, dateString: dateString, date: date, endDate: endDate, latitude: latitude, longitude: longitude, showDetails: false))
                 }
             }
